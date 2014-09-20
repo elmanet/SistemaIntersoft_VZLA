@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document 
+FORMATO DE BOLETINES DE COLEGIOS */
+#ancho_boletin_no{ width:17.59cm; height:20.94cm; margin-top:0.2cm;}
+#ancho_boletin_no .fuente{ font-size:08pt; text-align:left; font-family:Verdana, Geneva, sans-serif;}
+#ancho_boletin_no .fuente_titulo{ font-size:14pt; font-family:Verdana, Geneva, sans-serif; font-weight:bold;}
+#ancho_boletin_no .logo{ width:2.5cm; height:2.5cm}
+#ancho_boletin_no .infoalumno{ width:14cm;}
+#ancho_boletin_no .tabla_calificacion{ width:17cm; font-size:07pt; text-align:center; font-family:Verdana, Geneva, sans-serif;}
+#ancho_boletin_no .columna_parcial{ width:1cm;}
+#ancho_boletin_no .columna_asignaturas{ width:6cm;}
+#ancho_boletin_no .columna_observaciones{ width:6cm;}
+#ancho_boletin_no .columna_notas1ro{ width:6cm;}
+#ancho_boletin_no .columna_firma{ width:4.5cm;}
+#ancho_boletin_no .nota{ width:5cm; height:1cm; border:1px solid; -moz-border-radius:5px; background-color:#CCC; margin:auto;}
+
+/* LINEA PARA OCULTAR ALGO */
+.ocultar{
+visibility:hidden 
+}
+
+.ancho_td_no1{ width:0.7cm; height:1cm; font-size:8pt; border:1px solid;  margin-left:0px;}
+.ancho_td_cedula1{ width:1.5cm; height:1cm; font-size:8pt; border:1px solid;  margin-left:0px;}
+.ancho_td_nombre1{ width:5.1cm; height:1cm; font-size:8pt; border:1px solid;  margin-left:0px;}
+
+.ancho_td_no{ width:0.7cm; height:1cm; font-size:8pt; border:1px solid;  margin-left:0px;}
+.ancho_td_cedula{ width:1.5cm; height:1cm; font-size:8pt; border:1px solid;  margin-left:0px;}
+.ancho_td_nombre{ width:8cm; height:1cm; font-size:8pt; border:1px solid;  margin-left:0px;}
+
+.ancho_td_titulonota{ width:10cm; height:1cm; border:1px solid; margin-left:0px;}
+.ancho_td_nota{ width:0.65cm; height:0.65cm; border:1px solid; margin-left:0px;}
+.ancho_td_nota2{ width:0.65cm; height:1cm; border:1px solid; margin-left:0px;}
+
+.ancho_td_no3{ width:0.7cm; height:0.65cm; border:1px solid;  margin-left:0px;}
+.ancho_td_cedula3{ width:1.5cm; height:0.65cm; border:1px solid;  margin-left:0px;}
+.ancho_td_nombre3{ width:8cm; height:0.65cm; border:1px solid;  margin-left:0px;}
+
+.ancho_tabla{ width:35cm;}
+
+
+table {border-collapse:collapse;  margin-left:0px;}
+
+td {padding: 0;}
+
+
+

@@ -1,0 +1,702 @@
+@charset "utf-8";
+/* CSS Document 
+FORMATO DE BOLETINES DE COLEGIOS */
+
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  border:0px;
+ }
+ 
+ img
+{
+  border:0;
+}
+
+#ancho_certificacion { 
+	width:17.2cm; 
+	height:30.30cm; 
+	float:left;
+	
+}
+
+#logo_me {
+	width:8cm; 
+	height:2cm; 	 
+	float:left;
+  	font-size: 6pt;
+	text-align:left;
+}
+
+#logo {
+	width:1.9cm; 
+	height:1.9cm; 	 
+	float:left;
+
+}
+
+
+#titulo_mencion {
+	width:9.2cm; 
+	height:2cm; 	 
+	float:left;
+}
+
+#titulo_mencion .certificacion {
+	width:9.2cm; 
+	height:0.5cm; 	
+	float:left; 
+
+	font-size:11pt;
+	text-decoration: underline;
+	
+}
+
+#titulo_mencion .coddea {
+	width:9.2cm; 
+	height:0.3cm; 	
+	float:left; 
+	margin-bottom:0.2cm;
+
+	
+}
+
+#titulo_mencion .titulo1 {
+	width:2.5cm; 
+	height:0.3cm; 	
+	float:left; 
+
+	
+}
+
+#titulo_mencion .plan {
+	width:4.5cm; 
+	height:0.3cm; 	
+	float:left; 
+	border-bottom:1px solid;
+	font-size:6pt;
+
+	
+}
+
+#titulo_mencion .titulo2 {
+	width:1cm; 
+	height:0.3cm; 	
+	float:left; 
+
+	
+}
+
+#titulo_mencion .codplan {
+	width:1cm; 
+	height:0.3cm; 	
+	float:left; 
+	border-bottom:1px solid;
+
+	
+}
+
+#titulo_mencion .codplan_22 {
+	width:1.6cm; 
+	height:0.3cm; 	
+	float:left; 
+	border-bottom:1px solid;
+
+	
+}
+
+#titulo_mencion .mencion {
+	width:6.5cm; 
+	height:0.3cm; 	
+	float:left; 
+	border-bottom:1px solid;
+
+	
+}
+
+#titulo_mencion .fecha_titulo {
+	width:4cm; 
+	height:0.3cm; 	
+	float:left; 
+	
+}
+
+#titulo_mencion .fecha {
+	width:5cm; 
+	height:0.3cm; 	
+	float:left; 
+	border-bottom:1px solid;
+
+	
+}
+
+
+
+
+
+#info_plantel_estudiante {
+	width:17.2cm; 
+	height:3cm; 	 
+	float:left;
+
+
+}
+
+#info_plantel_estudiante .titulo {
+	width:17.2cm; 
+	height:0.3cm; 	 
+	float:left;
+	text-align:left;
+
+}
+#info_plantel_estudiante .titulo_info {
+	width:2cm; 
+	height:0.3cm; 	 
+	float:left;
+
+
+}
+#info_plantel_estudiante .cod_plantel {
+	width:2cm; 
+	height:0.3cm; 	 
+	float:left;
+	text-align:center;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .nombre_plantel {
+	width:7.6cm; 
+	height:0.3cm; 	 
+	float:left;
+	text-align:center;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .dtto {
+	width:1.4cm; 
+	height:0.3cm; 	 
+	float:left;
+	text-align:center;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .direccion {
+	width:10cm; 
+	height:0.3cm; 	 
+	float:left;
+	text-align:left;
+	border-bottom:1px solid;
+
+}
+
+
+
+#info_plantel_estudiante .telefono {
+	width:3cm; 
+	height:0.3cm; 	 
+	float:left;
+	text-align:center;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .municipio {
+	width:4cm; 
+	height:0.3cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .varios {
+	width:3cm; 
+	height:0.3cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .cedula {
+	width:9cm; 
+	height:0.3cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .nombres {
+	width:6cm; 
+	height:0.3cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+}
+
+#info_plantel_estudiante .entidad {
+	width:5.5cm; 
+	height:0.3cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+}
+
+
+
+#plantel_curso {
+	width:17.2cm; 
+	height:1.305cm; 	 
+	float:left;
+}
+
+#plantel_curso .titulo{
+	width:7.95cm; 
+	height:0.355cm; 	 
+	float:left;
+	text-align:left;
+	padding-top:1px;
+	padding-left:1px;
+
+
+	
+}
+#plantel_curso .cuadrito{
+	width:0.6cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+		
+}
+
+#plantel_curso .cuadro_mediano{
+	width:3.45cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 6.5pt;
+		
+}
+
+#plantel_curso .cuadro_mediano2{
+	width:2.52cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 6.5pt;
+		
+}
+
+#plantel_curso .cuadro_grande{
+	width:4.15cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 7pt;
+		
+}
+
+#plantel_curso1 {
+	width:17.2cm; 
+	height:0.355cm; 	 
+	float:left;
+}
+
+#plantel_curso1 .titulo{
+	width:7.95cm; 
+	height:0.355cm; 	 
+	float:left;
+	text-align:left;
+	padding-top:1px;
+	padding-left:1px;
+
+
+	
+}
+#plantel_curso1 .cuadrito{
+	width:0.6cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+		
+}
+
+#plantel_curso1 .cuadro_mediano{
+	width:3.45cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 6.5pt;
+		
+}
+
+#plantel_curso1 .cuadro_mediano2{
+	width:2.52cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 6.5pt;
+		
+}
+
+#plantel_curso1 .cuadro_grande{
+	width:4.15cm; 
+	height:0.355cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 7pt;
+		
+}
+
+#central_notas {
+	width:13.2cm; 
+	height:19cm; 	 
+	float:left;
+	text-align:left;
+}
+
+#central_notas .container_titulos {
+	width:13.2cm; 
+	height:1cm; 	 
+	float:left;
+	
+
+
+}
+
+#central_notas .cuadro_left {
+width: 5.4cm;
+height: 0.34cm;
+float: left;
+text-align: left;
+border-left: 1px solid;
+border-bottom: 1px solid;
+}
+
+#central_notas .container_cuadro_left {
+	width: 5.45cm;
+height: 0.7cm;
+float: left;
+text-align: left;
+
+}
+
+#central_notas .cuadro_medio_grande {
+width: 3.3cm;
+height: 0.34cm;
+float: left;
+text-align: center;
+border-left: 1px solid;
+border-bottom: 1px solid;
+}
+
+#central_notas .container_cuadro_medio_grande {
+	width: 3.32cm;
+	height:0.7cm; 	 
+	float:left;
+	text-align:center;
+
+}
+
+#central_notas .enno {
+	width:1.025cm; 
+	height:0.34cm; 	 
+	float:left;
+	text-align:center;
+
+}
+
+#central_notas .enletras {
+	width: 2.2cm; 
+	height:0.34cm; 	 
+	float:left;
+	text-align:center;
+	border-left:1px solid;
+}
+
+#central_notas .t-e {
+	width:0.705cm; 
+	height:0.705cm; 	 
+	float:left;
+	text-align:center;
+	border-left:1px solid;
+
+	border-bottom:1px solid;
+}
+
+
+#central_notas .container_fecha {
+	width:2.4cm; 
+	height:0.7cm; 	 
+	float:left;
+	text-align:center;
+
+}
+
+#central_notas .fecha {
+	width:2.4cm; 
+	height:0.34cm; 	 
+	clear:left;
+	text-align:center;
+	border-left:1px solid;
+
+	border-bottom:1px solid;
+}
+
+#central_notas .mes {
+	width: 1.19cm;
+height: 0.34cm;
+float: left;
+text-align: center;
+
+}
+
+#central_notas .anio {
+	width:1.105cm; 
+	height:0.34cm; 	 
+	float:left;
+	text-align:center;
+	border-left:1px solid;
+}
+
+#central_notas .plantel {
+	width:1.27cm; 
+	height:0.34cm; 	 
+	float:left;
+	text-align:center;
+	border-left:1px solid;
+	border-right:1px solid;
+	border-bottom:1px solid;
+}
+
+#central_notas .container_plantel {
+	width:1.27cm; 
+	height:0.7cm; 	 
+	float:left;
+	text-align:center;
+
+}
+
+
+#container_asignaturas {
+	width:13.5cm; 
+	 
+	float:left;
+}
+#container_asignaturas .mate {
+	width: 5.4cm;
+height: 0.34cm;
+float: left;
+border-left: 1px solid;
+border-bottom: 1px solid;
+font-size: 6.3pt;
+}
+
+#container_asignaturas .no {
+	width:1.04cm; 
+	height:0.34cm; 	 
+	float:left;
+
+	border-left:1px solid;
+
+	border-bottom:1px solid;
+	
+  	font-size: 8pt;
+	text-align:center;
+}
+
+#container_asignaturas .letras {
+	width: 2.24cm;
+height: 0.34cm;
+float: left;
+border-left: 1px solid;
+border-bottom: 1px solid;
+font-size: 8pt;
+}
+
+#container_asignaturas .te {
+	width:0.70cm; 
+	height:0.34cm; 	 
+	float:left;
+
+	border-left:1px solid;
+	border-bottom:1px solid;
+	text-align:center;
+}
+#container_asignaturas .fmes {
+	width:1.20cm; 
+	height:0.34cm; 	 
+	float:left;
+
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 8pt;
+	text-align:center;
+}
+
+#container_asignaturas .fanio {
+	width:1.15cm; 
+	height:0.34cm; 	 
+	float:left;
+
+	border-left:1px solid;
+	border-bottom:1px solid;
+  	font-size: 8pt;
+	text-align:center;
+}
+
+#container_asignaturas .no_plantel {
+	width:1.27cm; 
+	height:0.34cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-right:1px solid;
+	border-bottom:1px solid;
+  	font-size: 8pt;
+	text-align:center;
+}
+
+
+#ept {
+	width:17.4cm; 
+	height:2.2cm; 	 
+	background-color:#red;
+	float:left;
+
+}
+
+#ept .titulo {
+	width:17.4cm; 
+	height:0.33cm; 	 
+	float:left;
+	text-align:left;
+}
+
+#ept .pequeno {
+	width:1cm; 
+	height:0.33cm; 	 
+	float:left;
+	border-left:1px solid;
+
+	border-bottom:1px solid;
+}
+
+#ept .grande {
+	width:5.2cm; 
+	height:0.33cm; 	 
+	float:left;
+	border-left:1px solid;
+	text-align: left;
+	border-bottom:1px solid;
+}
+
+#ept .mediano {
+	width:2.2cm; 
+	height:0.33cm; 	 
+	float:left;
+	border-left:1px solid;
+	border-bottom:1px solid;
+}
+
+
+#observaciones {
+	width:17.4cm; 
+	height:1.5cm; 	 
+	float:left;
+}
+
+#observaciones .lineas{
+	width:17.2cm; 
+	height:0.33cm; 	 
+	float:left;
+	border-bottom:1px solid;
+	text-align:left;
+	line-height: 1.4;
+}
+#observaciones .info{
+	width:17.2cm; 
+	height:0.33cm; 	 
+	float:center;
+	text-align:left;
+  	font-size: 6pt;
+}
+
+#central_sellos {
+	width:3.65cm; 
+	height:18.3cm; 	 
+	float:left;
+	margin-top:0.1cm;
+	margin-left:0.1cm;
+	border-top:1px solid;
+	border-left:1px solid;
+	border-right:1px solid;
+
+}
+
+#central_sellos .titulo {
+	width:3.65cm; 
+	height:0.33cm; 	 
+	float:left;
+	border-bottom:1px solid;
+}
+
+#central_sellos .director {
+	width:3.65cm; 
+	height:0.7cm; 	 
+	float:left;
+	border-bottom:1px solid;
+	text-align:left;
+	
+}
+
+#central_sellos .nombre_director {
+	width:3.65cm; 
+	height:0.90cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+}
+
+#central_sellos .sello {
+	width:3.65cm; 
+	height:3cm; 	 
+	float:left;
+	border-bottom:1px solid;
+}
+#central_sellos .cuadro_mediano{
+	width:3.65cm; 
+	height:1.6cm; 	 
+	float:left;
+	border-bottom:1px solid;
+
+	font-size:7pt;
+}
+
+#central_sellos .cuadro_pequeno{
+	width:3.65cm; 
+	height:0.8cm; 	 
+	float:left;
+	border-bottom:1px solid;
+	font-size:8pt;
+
+}
+
+#central_sellos .cuadro_datos{
+	width:3.65cm; 
+	height:1cm; 	 
+	float:left;
+	border-bottom:1px solid;
+	text-align:left;
+
+}
+

@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin-bottom:0px;
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	
+}
+
+#container {
+	margin:auto;
+	width:auto;
+	height:auto;
+}
+
+#topmain{
+	width:780px;
+	height:auto;
+	margin:auto;
+}
+
+#menumain {
+	width:780px;
+	height:34px;
+	margin:auto;
+	background-image:url(../images/cole/ima/barramenu.png);
+	background-repeat:no-repeat;
+}
+#container_btn {
+	margin:auto;
+	width:580px;
+
+}
+
+#container_btn_webmas {
+	margin:auto;
+	width:720px;
+
+}
+
+#btn_inicio {
+	width:80px;
+	height:15px;
+	float:left;
+	margin-top:10px;
+	margin-left:2px;
+	
+}
+#btn_institucion {
+	width:80px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+#btn_fotogaleria {
+	width:80px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+#btn_cartelera {
+	width:80px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+#btn_foro {
+	width:50px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+#btn_contacto {
+	width:80px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+#btn_profe{
+	width:80px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+#btn_webmas {
+	width:80px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+
+#btn_webmas2 {
+	width:120px;
+	height:15px;
+	margin-top:10px;
+	margin-left:2px;
+	float:left;
+}
+
+#container_central {
+	width:780px;
+	margin:auto;
+}
+
+#container_central_top{
+	width:780px;
+	height:35px;
+	background-image:url(../images/cole/ima/fondocentraltop.png);
+	background-repeat:no-repeat;
+}
+
+#container_central_med{
+	width:780px;
+	height:auto;
+	background-image:url(../images/cole/ima/fondocentralmed.png);
+	background-repeat:repeat-y;
+}
+
+#container_central_abajo{
+	width:780px;
+	height:35px;
+	background-image:url(../images/cole/ima/fondocentralabajo.png);
+	background-repeat:no-repeat;
+}
+
+#menu_abajo {
+	width:780px;
+	height:34px;
+	margin:auto;
+	background-image:url(../images/cole/ima/barramenu.png);
+	background-repeat:no-repeat;
+}
+
+#frame {
+	width:750px;
+	height:550px;
+	background-color:#FFF;
+	margin-left:15px;
+}
+
+.link_blanco {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight:bold;
+	font-variant: normal;
+	text-transform:none;
+	color: #FFF;
+	text-decoration: none;
+	text-align:center;
+	
+}
+.text {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#CCC;
+}
+.text1 {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#fff;
+}
+
+#usuario{
+	width:775px;
+	height:20px;
+	background-color:#000;
+	margin:auto;}

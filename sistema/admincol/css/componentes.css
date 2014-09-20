@@ -1,0 +1,265 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+
+
+h1 {color:#770011;}
+p {font-size:12px;}
+td {font-size:12px;}
+
+#contenedor{
+	width:780px;
+	height:auto;
+	background-color:red;
+
+
+	
+}
+
+#banner{
+	width:970px;
+	height:190px;
+	margin:auto;
+	background:url(../images/banner.png); 
+}
+
+#topbar{
+	width:978px;
+	height:35px;
+	margin:auto;
+	background-color: #3B240B;
+}
+
+#contenido{
+	width:780px;
+	height:auto;
+float:left;
+	padding-bottom: 25px;
+	padding-left:5px;
+
+}
+
+#footer{
+	width:978px;
+	height:20px;
+	margin:auto;
+	padding-top:10px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#fff;
+}
+
+.marco{
+	width:600px;
+	height:auto;
+	margin:auto;
+	background-color:#F7F8E0;
+}
+
+.zona_boton{
+	width:760px;
+	height:auto;
+	float:left;
+	padding-top:40px;
+		
+
+}
+
+.clear{
+	width:720px;
+	height:auto;
+
+	background-color:#fffccc;
+}
+
+
+.texto_pequeno_gris{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#333;
+}
+
+.texto_mediano_gris {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	color:#333;
+}
+
+.texto_mediano_grande {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#333;
+}
+
+.texto_mediano_grisclaro {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	color:#666;
+}
+
+.texto_grande_gris {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	color:#333;
+	font-weight:bold;
+}
+
+.titulo_grande_gris {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	color:#333;
+	font-weight:bold;
+}
+
+.titulo_extragrande_gris {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	color:#036;
+	font-weight:bold;
+}
+
+.titulo_extramediano_gris {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	color:#036;
+	font-weight:bold;
+}
+
+.texto_pequeno_blanco{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#FFF;
+	text-align:left;
+}
+.texto_pequeno6pt_negro{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:6pt;
+	color:#000;
+	text-align:left;
+}
+
+.texto_8pt_negro{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:7pt;
+	color:#000;
+
+}
+
+.cartelera_eloy {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color:#036;
+	text-decoration: none;
+}
+
+.titulo_periodico
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:34px;
+	font-weight:bold;
+	color:#333;
+}
+
+.link_blanco {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFF;
+	text-decoration: none;
+	text-align:left;
+}
+
+#foncarte1{
+	background-color:#000;
+}
+
+#foncarte2{
+	background-color:#0FF;
+}
+
+#textovertical {writing-mode: tb-rl; filter: flipv fliph} 
+
+
+.enlace {
+
+-moz-border-radius: 3px;
+background-color: #CCC;
+border : 1px solid #000000;
+font-family: Verdana, Geneva, sans-serif;
+font-size : 10px;
+padding-left : 3px;
+height:auto;
+	
+}
+
+
+input:focus {
+	border:2px solid #000;
+	background: #f3f3f3;
+	-moz-border-radius: 5px;
+}
+
+input {
+	border-width: 1px;
+	border-color:#666;
+	border-style: double; 
+	font-size:10pt;
+	letter-spacing : 1px;
+	-moz-border-radius: 5px;
+	padding-top:2px;
+	padding-left:5px;
+}
+
+.textarea_menus {
+	border-width: 1px;
+	border-color:#666;
+	border-style: double; 
+	font-size:10pt;
+	letter-spacing : 1px;
+	-moz-border-radius: 5px;
+	padding-top:2px;
+	padding-left:5px;
+}
+.resaltar{
+	font-weight:bold;
+	color:#F00;
+}
+/* BOLETIN DE PRIMARIA*/
+#ancho_boletin{ width:24.94cm; height:17.59cm; border:1px solid; -moz-border-radius:5px; margin-top:0.2cm;}
+#ancho_boletin .tabla{ width:24cm;}
+#ancho_boletin .columna{ width:11cm;}
+#ancho_boletin .nota{ width:5cm; height:1cm; border:1px solid; -moz-border-radius:5px; background-color:#CCC; margin:auto;}
+
+/* BOLETIN DE LICEO*/
+#ancho_boletin_lb{ width:24.94cm; height:17.59cm; margin-top:0.2cm;}
+#ancho_boletin_lb .tabla{ width:24cm;}
+#ancho_boletin_lb .columna{ width:11cm;}
+#ancho_boletin_lb .nota{ width:5cm; height:1cm; border:1px solid; -moz-border-radius:5px; background-color:#CCC; margin:auto;}
+
+/* TABLAS */
+table .fondo_tabla tr:hover {
+	background-color:#FF9;
+	cursor:default;
+	border:1px solid
+}
+
+/* PLANILLAS */
+#ancho_planilla{ width:17.59cm; height:22.94cm; border:1px solid; -moz-border-radius:5px; margin-top:0.2cm;}
+#foto_planilla { width:2cm; height:3cm; border:1px solid; -moz-border-radius:5px; margin-top:0.2cm; margin-right:1cm;}
