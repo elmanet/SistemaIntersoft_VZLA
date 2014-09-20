@@ -1,0 +1,254 @@
+@charset "utf-8";
+/* CSS Document 
+Creado por:
+Eloy Chacón
+INTERSOFT-latin, Todos los derechos reservados 2010 */
+
+/* FORMATO DE TEXTOS */
+
+li {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:80%;
+	color:black;
+	}
+	
+p {
+	font-size:90%;
+	font-family:Verdana, Geneva, sans-serif;
+	}
+	
+input {
+	color: #4D4D4D;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+}
+fieldset{
+
+background-color:#fffccc; 
+border:1px solid; 
+padding: 5 5 5 5; 
+border-radius: 8px 8px 8px 8px; 
+-moz-border-radius: 8px; 
+
+	}
+	
+td {
+	color: #4D4D4D;
+	font-size: 80%;
+	font-family: verdana, arial, helvetica, sans-serif;
+
+}
+
+/* CONFIGURACION GENERAL DE MODULOS */
+
+#contenedor_menu_top {
+	width: 100%;
+	text-align:center;
+	height: 42px;
+	border-bottom:1px solid;
+	position: fixed; TOP: 0%;
+  
+	background-image:url(../images/menu.gif);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+   padding-top: 5px;
+   text-shadow: black 0em 0.1em 0.1em;
+}
+
+#barra_publicidad {
+	width: 100%;
+	text-align:center;
+	height: 45px;
+	
+	border-top:1px solid;
+
+	position: fixed; TOP: 93%;
+	 box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+   background-image:-moz-linear-gradient(top, #27D146, #2E3B0B); 
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #27D146), color-stop(1, #2E3B0B)); 
+   background-image:-webkit-linear-gradient(#27D146, #2E3B0B);	
+   background-image:-o-linear-gradient(top, #27D146, #2E3B0B); 
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#27D146', EndColorStr='#434343'); 
+	padding-top: 2px;
+
+}
+
+#contenedor_menu_top #logo {
+	width: 205px;
+	height: 40px;
+	margin-left:200px;
+	float:left;
+	background-image:url(../images/colegionline_header.png);
+	
+
+}
+
+
+
+#contenedor_central_modulo {
+	width: 100%;
+
+	height: auto;
+	margin-top:50px;
+
+
+
+}
+
+#contenedor_vacio {
+	width: 660px;
+	height: 10px;
+	margin-top:20px;
+
+
+}
+
+#notas {
+	color: #4D4D4D;
+	font-size: 60%;
+	font-family: verdana, arial, helvetica, sans-serif;
+	text-align:center;
+	
+	}
+
+#frame {
+	width:100%;
+	height:620px;
+	background-color:#FFF;
+	margin-left:0px;
+	
+}
+	
+/* MODULO DE ACCESO */
+
+#div_acceso {
+	width: 600px;
+	height: 220px;
+	padding-top:20px;
+
+}
+
+.ima_usua {
+	background-image: url(../images/icons/user.png);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 10px;
+}
+
+/* MODULO DE ALUMNOS */
+
+#contenedor_central_modulo #menu {
+	width: 10%;
+	height: 620px;
+	font-size: 11px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	margin:auto;
+
+	margin-top: -2px;
+	float:left;
+	
+}
+
+#contenedor_central_modulo #contenido_alumno{
+	width: 90%;
+	height: auto;
+	font-size: 11px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	margin-top:-2px;
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+
+}
+#contenedor_central_modulo #menu table td {
+	text-align:center;
+	vertical-align:top;
+
+	
+	}
+
+/* MODULO DE DOCENTES */
+
+#contenedor_central_modulo #menu_docente {
+	width: 180px;
+	height: 460px;
+	font-size: 11px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	margin-top:5px;
+	border:1px solid; -moz-border-radius:5px;
+	background-image:url("../images/cole/ima/fondo6.jpg");
+	float:left;
+	text-align:left;
+	vertical-align:middle;
+}
+#contenedor_central_modulo #contenido{
+	width: 470px;
+	height: 460px;
+	font-size: 11px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	margin-top:5px;
+	margin-left:5px;
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+
+}
+
+
+
+/* MODULO ADMINISTRATIVO*/
+
+#contenedor_central_modulo #contenido_administrativo{
+	width: 90%;
+	height: auto;
+	font-size: 11px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+	margin-top: -2px;
+
+
+}
+
+/* MODULO REPRESENTANTES*/
+
+.marco_vista{
+	width: 190px;
+	height: 250px;
+	font-size: 11px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	border:1px solid; -moz-border-radius:5px;
+	background-color: #fffccc; 
+	
+ 
+}
+
+.icono{
+	width: 100%;
+	height: 40px;
+	padding-top: 25px;
+	float: left;
+}
+
+.container{
+	width: 100%;
+	height: 140px;
+	float: left;
+}
+.container h1{font-size: 16px; font-weight: bold;}
+.container .texto {font-size: 12px; font-style: italic; }
+.container .texto_pequeno a {font-size: 10px; }
+
+.footer{
+	width: 100%;
+	height: 35px;
+	float: left;
+	font-size: 9px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	
+}
+
+.divredondeado { text-align: center;	border:1px solid; -moz-border-radius:3px; float: left; background-color: #fffccc; width: 100px;}
+
+.divredondeado2{margin:auto; text-align: center; width: 300px;height: 150px;font-size: 14px;font-family: verdana, arial, helvetica, sans-serif;	border:1px solid; -moz-border-radius:5px;	background-color: #fffccc;}
+

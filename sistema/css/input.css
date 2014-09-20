@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* CSS Document */
+
+.enlace {
+
+-moz-border-radius: 3px;
+background-color: #CCC;
+border : 1px solid #000000;
+font-family: Verdana, Geneva, sans-serif;
+font-size : 10px;
+padding-left : 3px;
+height:auto;
+	
+}
+
+
+.text_input:focus {
+
+	-moz-border-radius: 5px;
+	 color: #2E2E2E;
+	 background-color: #ccc;
+    border: 3px solid;
+    border-color: #red;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    height: 30px;
+    margin-top: 1px;
+    padding: 1px 0 0 1px;
+    position: relative;
+}
+
+.text_input {
+	
+    background-color: #FFF;
+    border: 2px solid;
+    color:#2E2E2E;
+    border-color: #6E6E6E;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    height: 30px;
+    margin-top: 1px;
+    padding: 1px 0 0 1px;
+    position: relative;
+}
+
+.text_input_peq:focus {
+
+	-moz-border-radius: 5px;
+	 color: #2E2E2E;
+	 background-color: #ccc;
+    border: 3px solid;
+    border-color: #red;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    height: 25px;
+    width: 250px;
+    margin-top: 1px;
+    padding: 1px 0 0 1px;
+    position: relative;
+}
+
+
+.text_input_peq {
+	
+    background-color: #FFF;
+    border: 2px solid;
+    color:#2E2E2E;
+    border-color: #6E6E6E;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    height: 25px;
+    width: 250px;
+    margin-top: 1px;
+    padding: 1px 0 0 1px;
+    position: relative;
+    
+}
+
+.text_tarea:focus {
+
+	-moz-border-radius: 5px;
+	 color: #2E2E2E;
+	 background-color: #ccc;
+    border: 3px solid;
+    border-color: #red;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    height: 100px;
+	 width: 250px;
+    margin-top: 1px;
+    padding: 1px 0 0 1px;
+    position: relative;
+}
+
+.text_tarea {
+	
+    background-color: #FFF;
+    border: 2px solid;
+    color:#2E2E2E;
+    border-color: #6E6E6E;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    height: 100px;
+    width: 250px;    
+    margin-top: 1px;
+    padding: 1px 0 0 1px;
+    position: relative;
+}
+
+.textarea_menus {
+	border-width: 1px;
+	border-color:#666;
+	border-style: double; 
+	font-size:10pt;
+	letter-spacing : 1px;
+	-moz-border-radius: 5px;
+	padding-top:2px;
+	padding-left:5px;
+}
+.resaltar{
+	font-weight:bold;
+	color:#F00;
+
+}
+
+.resaltar_error{

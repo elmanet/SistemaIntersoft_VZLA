@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+#container {
+	width:730px;
+	margin:auto;
+}
+
+#central_izq{
+	width:350px;
+	float:left;
+	margin-left:5px;
+	
+}
+#central_med{
+	width:200px;
+	height:680px;
+	float:left;
+	margin-left:10px;
+
+}
+#central_der{
+	width:150px;
+	height:680px;
+	float:left;
+	margin-left:10px;
+
+}
+
+#publi_prin {
+	width:346px;
+	height:189px;
+	margin:auto;
+}
+#marque{
+	width:346px;
+	height:20px;
+	margin:auto;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:9px;
+	color:#FFF;
+	background-color:#06F;
+	padding-top:10px;
+	margin-top:5px;
+}
+
+#grados {
+	width:346px;
+	height:120px;
+	margin:auto;
+	margin-top:5px;
+}
+
+#mensaje {
+	width:346px;
+	margin:auto;
+	margin-top:5px;
+}
+#historia {
+	width:346px;
+	margin:auto;
+	margin-top:5px;
+}
+
+#cartelera {
+	width:200px;
+	margin:auto;
+}
+
+#foncarte1{
+	background-color:#06F;
+}
+
+#foncarte2{
+	background-color:#FFC;
+}
+
+#sesionalumno {
+	width:150px;
+	height:auto;
+	margin:auto;
+}
+
+#ingresoalum {
+	width:80px;
+	height:auto;
+	margin:auto;
+	padding-top:5px;
+}
