@@ -3007,6 +3007,72 @@ $periodoactual = mysql_query($query_periodoactual, $sistemacol) or die(mysql_err
 $row_periodoactual = mysql_fetch_assoc($periodoactual);
 $totalRows_periodoactual = mysql_num_rows($periodoactual);
 
+// INICIO DE BUSQUEDAS SQL
+
+$colname_obser = "-1";
+if (isset($_GET['curso_id'])) {
+  $colname_obser = $_GET['curso_id'];
+}
+
+mysql_select_db($database_sistemacol, $sistemacol);
+$query_obser = sprintf("SELECT * FROM jos_formato_evaluacion_observacion WHERE  curso_id = %s", GetSQLValueString($colname_obser, "int"));
+$obser = mysql_query($query_obser, $sistemacol) or die(mysql_error());
+$row_obser = mysql_fetch_assoc($obser);
+$totalRows_obser = mysql_num_rows($obser);
+
+
+// SQL PARA REGISTRO DE DATOS
+
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "captchaform1")) {
+ $insertSQL = sprintf("INSERT INTO jos_formato_evaluacion_observacion(id_observa, curso_id, observa) VALUES ( %s, %s, %s)", 
+							  GetSQLValueString($_POST['id_observa'], "int"),
+							   GetSQLValueString($_POST['curso_id'], "text"),
+								GetSQLValueString($_POST['observa'], "text"));
+                       
+  mysql_select_db($database_sistemacol, $sistemacol);
+  $Result1 = mysql_query($insertSQL, $sistemacol) or die(mysql_error());
+
+ $insertGoTo = "sabana_calificaciones.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
+    $insertGoTo .= $_SERVER['QUERY_STRING'];
+  } 
+  header(sprintf("Location: %s", $insertGoTo));
+}
+
+// SQL PARA REGISTRO DE DATOS
+ 
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "captchaform2")) {
+
+   $updateSQL = sprintf("UPDATE jos_formato_evaluacion_observacion SET observa=%s WHERE id_observa=%s",  
+							 
+							  GetSQLValueString($_POST['observa'], "text"),
+                       GetSQLValueString($_POST['id_observa'], "int"));
+                       
+  mysql_select_db($database_sistemacol, $sistemacol);
+  $Result1 = mysql_query($updateSQL, $sistemacol) or die(mysql_error());
+
+  $updateGoTo = "sabana_calificaciones.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
+    $updateGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $updateGoTo));
+}
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -3014,11 +3080,36 @@ $totalRows_periodoactual = mysql_num_rows($periodoactual);
 <title><?php echo $row_colegio['tituloweb']; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="../../css/main_central.css" rel="stylesheet" type="text/css">
-<link href="../../css/form_impresion.css" rel="stylesheet" type="text/css">
+<link href="../../css/form_impresion.css" rel="stylesheet" type="text/css" >
+<link href="../../css/form_impresion_ocultar.css" rel="stylesheet" type="text/css" media="print">
 </head>
 <body>
+<div class="ocultar">
+<div style="width: 100%;height:35px;position: fixed;background: #38BB81;box-shadow: 0 0 10px #424242;padding-top:5px;">
 
-<table width="1700"><tr><td>
+<?php if($totalRows_obser>0) { ?>
+<form action="<?php echo $editFormAction; ?>"  id="captchaform2" method="POST" enctype="multipart/form-data" target="_self" class="cmxform" >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="texto_pequeno_gris" style="font-size: 13px;text-shadow: 0 0 5px #fff;">Observaciones</span>
+<input class="text_input" type="text" id="observa" name="observa" value="<?php echo $row_obser['observa'];?>" style="width:500px;border-radius: 5px;height: 25px;" /></td>
+<input type="submit" name="submit"  value="Modificar" class="boton_guardar" style="height: 30px;border-radius: 5px;" /><br>
+<input type="hidden" name="id_observa" id="id_observa" value="<?php echo $row_obser['id_observa'];?>">
+<input type="hidden" name="MM_update" value="captchaform2">	
+</form>
+<?php }else {?>
+<form action="<?php echo $editFormAction; ?>"  id="captchaform1" method="POST" enctype="multipart/form-data" target="_self" class="cmxform" >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="texto_pequeno_gris" style="font-size: 13px;text-shadow: 0 0 5px #fff;">Observaciones</span>
+<input class="text_input" type="text" id="observa" name="observa" value="" style="width:300px;border-radius: 5px;height: 25px;" /></td>
+<input type="submit" name="submit"  value="Agregar" class="boton_guardar" style="height: 30px;border-radius: 5px;" /><br>
+<input type="hidden" name="curso_id" id="curso_id" value="<?php echo $_GET['curso_id'];?>">
+<input type="hidden" name="id_observa" id="id_observa" value="">
+<input type="hidden" name="MM_insert" value="captchaform1">	
+</form> 
+<?php } ?>
+</div>
+<br>
+<br>
+</div>
+<table width="1800"><tr><td>
  	           <td height="100"  width="120" align="right" valign="middle"><img src="../../images/<?php echo $row_colegio['logocol']; ?>" width="100" height="100" align="absmiddle"></td>
 
             	<td align="center" valign="middle"><div align="center">
@@ -3047,7 +3138,7 @@ $totalRows_periodoactual = mysql_num_rows($periodoactual);
 <br />
 
 
-<table width="1700" ><tr>
+<table width="1800" ><tr>
 
 
 <?php // MATERIA 1
@@ -3841,7 +3932,7 @@ if (($totalRows_mate9>0) and (($confi=="bol02") or ($confi=="nor01") or ($confi=
 
 <?php } ?>
 
-<!--
+
 <?php
 if (($totalRows_mate9>0) and ($row_mate9['tipo_asignatura']=="")){
 ?>
@@ -3923,7 +4014,7 @@ if (($totalRows_mate9>0) and ($row_mate9['tipo_asignatura']=="")){
 
 <?php } ?>
 
--->
+
 
 <?php // MATERIA 10
 if (($totalRows_mate10>0) and (($confi=="bol02") or ($confi=="nor02") or ($row_mate11['tipo_asignatura']=="educacion_trabajo") or ($row_mate11['tipo_asignatura']=="premilitar"))){
@@ -4785,8 +4876,15 @@ if ($row_mate17l1['tipo_asignatura']=="premilitar"){
 
 <?php // fin consulta
 ?>
- </tr></table>
-<span class="texto_pequeno_gris">Sistema Intersoft para: <b><?php echo $row_colegio['webcol'];?></b></span>
+ </tr>
+ </table>
+ <div style="padding:20px;border-radius:10px;border:1px solid;background:#f3f3f3;width: 85%;margin: 20px auto;">
+  <span class="texto_pequeno_gris"><b>OBSERVACIONES: </b><?php echo $row_obser['observa'];?></span><br> 
+ </div>
+ <center>
+<span class="texto_pequeno_gris">Sistema Intersoft para: <b><?php echo $row_colegio['webcol'];?></b></span> 
+ </center>
+
 
 
 

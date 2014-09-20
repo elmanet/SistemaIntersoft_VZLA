@@ -168,7 +168,7 @@ if (isset($_GET['lapso'])) {
   $lapso_asignatura = $_GET['lapso'];
 }
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_asignatura = sprintf("SELECT * FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='' AND d.cedula = %s AND a.lapso = %s ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura, "bigint"), GetSQLValueString($lapso_asignatura, "int"));
+$query_asignatura = sprintf("SELECT * FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura IS NULL AND d.cedula = %s AND a.lapso = %s ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura, "bigint"), GetSQLValueString($lapso_asignatura, "int"));
 $asignatura = mysql_query($query_asignatura, $sistemacol) or die(mysql_error());
 $row_asignatura = mysql_fetch_assoc($asignatura);
 $totalRows_asignatura = mysql_num_rows($asignatura);
@@ -180,7 +180,7 @@ if (isset($_GET['cedula'])) {
 }
 
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_asignatura1 = sprintf("SELECT c.nombre, a.def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='' AND d.cedula = %s AND a.lapso = 1 ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura1, "bigint"));
+$query_asignatura1 = sprintf("SELECT c.nombre, a.p1f1, a.p2f1, a.p3f1, a.p4f1, a.p5f1, a.def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura IS NULL AND d.cedula = %s AND a.lapso = 1 ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura1, "bigint"));
 $asignatura1 = mysql_query($query_asignatura1, $sistemacol) or die(mysql_error());
 $row_asignatura1 = mysql_fetch_assoc($asignatura1);
 $totalRows_asignatura1 = mysql_num_rows($asignatura1);
@@ -192,7 +192,7 @@ if (isset($_GET['cedula'])) {
 }
 
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_asignatura2 = sprintf("SELECT * FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='' AND d.cedula = %s AND a.lapso = 2 ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura2, "bigint"));
+$query_asignatura2 = sprintf("SELECT * FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura IS NULL AND d.cedula = %s AND a.lapso = 2 ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura2, "bigint"));
 $asignatura2 = mysql_query($query_asignatura2, $sistemacol) or die(mysql_error());
 $row_asignatura2 = mysql_fetch_assoc($asignatura2);
 $totalRows_asignatura2 = mysql_num_rows($asignatura2);
@@ -204,7 +204,7 @@ if (isset($_GET['cedula'])) {
 }
 
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_asignatura3 = sprintf("SELECT * FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='' AND d.cedula = %s AND a.lapso = 3 ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura3, "bigint"));
+$query_asignatura3 = sprintf("SELECT * FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura IS NULL AND d.cedula = %s AND a.lapso = 3 ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura3, "bigint"));
 $asignatura3 = mysql_query($query_asignatura3, $sistemacol) or die(mysql_error());
 $row_asignatura3 = mysql_fetch_assoc($asignatura3);
 $totalRows_asignatura3 = mysql_num_rows($asignatura3);
@@ -216,7 +216,7 @@ if (isset($_GET['cedula'])) {
 }
 
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_asignatura_final = sprintf("SELECT ROUND(AVG(a.def),0) as def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='' AND d.cedula = %s GROUP BY a.alumno_id, c.nombre ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura_final, "bigint"));
+$query_asignatura_final = sprintf("SELECT ROUND(AVG(a.def),0) as def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura IS NULL AND d.cedula = %s GROUP BY a.alumno_id, c.nombre ORDER BY b.orden_asignatura ASC" , GetSQLValueString($colname_asignatura_final, "bigint"));
 $asignatura_final = mysql_query($query_asignatura_final, $sistemacol) or die(mysql_error());
 $row_asignatura_final = mysql_fetch_assoc($asignatura_final);
 $totalRows_asignatura_final = mysql_num_rows($asignatura_final);
@@ -228,7 +228,7 @@ if (isset($_GET['cedula'])) {
   $colname_mate141 = $_GET['cedula'];
 }
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate141 = sprintf("SELECT ROUND(AVG(a.def),0) as def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='educacion_trabajo' AND d.cedula = %s AND a.lapso = 1 GROUP BY a.alumno_id" , GetSQLValueString($colname_mate141, "bigint"));
+$query_mate141 = sprintf("SELECT ROUND(AVG(a.def),0) as def, a.p1f1, a.p2f1, a.p3f1, a.p4f1, a.p5f1 FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='educacion_trabajo' AND d.cedula = %s AND a.lapso = 1 GROUP BY a.alumno_id" , GetSQLValueString($colname_mate141, "bigint"));
 $mate141 = mysql_query($query_mate141, $sistemacol) or die(mysql_error());
 $row_mate141 = mysql_fetch_assoc($mate141);
 $totalRows_mate141 = mysql_num_rows($mate141);
@@ -239,7 +239,7 @@ if (isset($_GET['cedula'])) {
   $colname_mate142 = $_GET['cedula'];
 }
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate142 = sprintf("SELECT ROUND(AVG(a.def),0) as def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='educacion_trabajo' AND d.cedula = %s AND a.lapso = 2 GROUP BY a.alumno_id" , GetSQLValueString($colname_mate142, "bigint"));
+$query_mate142 = sprintf("SELECT ROUND(AVG(a.def),0) as def, a.p1f1, a.p2f1, a.p3f1, a.p4f1, a.p5f1 FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='educacion_trabajo' AND d.cedula = %s AND a.lapso = 2 GROUP BY a.alumno_id" , GetSQLValueString($colname_mate142, "bigint"));
 $mate142 = mysql_query($query_mate142, $sistemacol) or die(mysql_error());
 $row_mate142 = mysql_fetch_assoc($mate142);
 $totalRows_mate142 = mysql_num_rows($mate142);
@@ -250,7 +250,7 @@ if (isset($_GET['cedula'])) {
   $colname_mate143 = $_GET['cedula'];
 }
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate143 = sprintf("SELECT ROUND(AVG(a.def),0) as def FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='educacion_trabajo' AND d.cedula = %s AND a.lapso = 3 GROUP BY a.alumno_id" , GetSQLValueString($colname_mate143, "bigint"));
+$query_mate143 = sprintf("SELECT ROUND(AVG(a.def),0) as def, a.p1f1, a.p2f1, a.p3f1, a.p4f1, a.p5f1 FROM jos_formato_evaluacion_bol01 a, jos_asignatura b, jos_asignatura_nombre c, jos_alumno_info d WHERE a.alumno_id=d.alumno_id AND a.asignatura_id=b.id AND b.asignatura_nombre_id=c.id AND b.tipo_asignatura='educacion_trabajo' AND d.cedula = %s AND a.lapso = 3 GROUP BY a.alumno_id" , GetSQLValueString($colname_mate143, "bigint"));
 $mate143 = mysql_query($query_mate143, $sistemacol) or die(mysql_error());
 $row_mate143 = mysql_fetch_assoc($mate143);
 $totalRows_mate143 = mysql_num_rows($mate143);
@@ -271,64 +271,143 @@ $colname_inasistencia = "-1";
 if (isset($_GET['cedula'])) {
   $colname_inasistencia = $_GET['cedula'];
 }
+$lapso_inasistencia = "-1";
+if (isset($_GET['lapso'])) {
+  $lapso_inasistencia = $_GET['lapso'];
+}
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_inasistencia = sprintf("SELECT sum(inasistencia_alumno) as inasistencia_alumno, sum(inasistencia) as hora_clase FROM jos_alumno_asistencia a, jos_alumno_info b WHERE a.alumno_id=b.alumno_id AND b.cedula = %s", GetSQLValueString($colname_inasistencia, "bigint"));
+$query_inasistencia = sprintf("SELECT sum(inasistencia_alumno) as inasistencia_alumno, sum(inasistencia) as inasistencia FROM jos_alumno_asistencia a, jos_alumno_info b WHERE a.alumno_id=b.alumno_id AND b.cedula = %s AND a.lapso=%s", GetSQLValueString($colname_inasistencia, "bigint"), GetSQLValueString($lapso_inasistencia, "int"));
 $inasistencia = mysql_query($query_inasistencia, $sistemacol) or die(mysql_error());
 $row_inasistencia = mysql_fetch_assoc($inasistencia);
 $totalRows_inasistencia = mysql_num_rows($inasistencia);
 
 // PROMEDIO DE LAPSO
+
+$lap=$_GET['lapso'];
 $colname_mate15 = "-1";
 if (isset($_GET['cedula'])) {
   $colname_mate15 = $_GET['cedula'];
 }
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.asignatura_nombre_id=e.id AND a.cedula = %s  GROUP BY a.alumno_id", GetSQLValueString($colname_mate15, "text"));
+$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, ROUND(SUM(c.def),0) as def, c.lapso FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.asignatura_nombre_id=e.id AND d.tipo_asignatura IS NULL AND a.cedula = %s AND c.lapso='$lap'  GROUP BY a.alumno_id", GetSQLValueString($colname_mate15, "text"));
 $mate15 = mysql_query($query_mate15, $sistemacol) or die(mysql_error());
 $row_mate15 = mysql_fetch_assoc($mate15);
 $totalRows_mate15 = mysql_num_rows($mate15);
 
+mysql_select_db($database_sistemacol, $sistemacol);
+$query_posicion = sprintf("SELECT a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as defi FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.asignatura_nombre_id=e.id GROUP BY a.alumno_id ORDER BY defi ASC");
+$posicion = mysql_query($query_posicion, $sistemacol) or die(mysql_error());
+$row_posicion = mysql_fetch_assoc($posicion);
+$totalRows_posicion = mysql_num_rows($posicion);
+
+$colname_posicion_c = "-1";
+if (isset($_GET['curso_id'])) {
+  $colname_posicion_c = $_GET['curso_id'];
+}
+mysql_select_db($database_sistemacol, $sistemacol);
+$query_posicion_c = sprintf("SELECT a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as defi FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.asignatura_nombre_id=e.id AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY defi ASC", GetSQLValueString($colname_posicion_c, "int"));
+$posicion_c = mysql_query($query_posicion_c, $sistemacol) or die(mysql_error());
+$row_posicion_c = mysql_fetch_assoc($posicion_c);
+$totalRows_posicion_c = mysql_num_rows($posicion_c);
+
+mysql_select_db($database_sistemacol, $sistemacol);
+$query_confi1 = sprintf("SELECT * FROM jos_periodo WHERE actual=1");
+$confi1 = mysql_query($query_confi1, $sistemacol) or die(mysql_error());
+$row_confi1 = mysql_fetch_assoc($confi1);
+$totalRows_confi1 = mysql_num_rows($confi1);
+
+// CONTAR ASIGNATURAS
+$colname_contarm = "-1";
+if (isset($_GET['cedula'])) {
+  $colname_contarm = $_GET['cedula'];
+}
+mysql_select_db($database_sistemacol, $sistemacol);
+$query_contarm = sprintf("SELECT d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, c.lapso FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.asignatura_nombre_id=e.id AND c.def>0 AND c.lapso='$lap' AND a.cedula = %s AND d.tipo_asignatura IS NULL  GROUP BY d.id", GetSQLValueString($colname_contarm, "int"));
+$contarm = mysql_query($query_contarm, $sistemacol) or die(mysql_error());
+$row_contarm = mysql_fetch_assoc($contarm);
+$totalRows_contarm = mysql_num_rows($contarm);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>:: SISTEMA COLEGIONLINE::</title>
+<title>INTERSOFT | Software Educativo</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link href="../../css/main_central.css" rel="stylesheet" type="text/css">
 
+<style type="text/css">
+body{background-image: url('../../images/logo-libros.jpg');}
 
-<script type="text/javascript"> 
-var NEW_LOC = "admin_listado_planilla.php"; 
-function goNow() { document.location=NEW_LOC; } 
-function printPage() { 
-  if (confirm("�Imprimir p�gina?")) {
-    window.print();
-  }
-  // La redirecci�n ocurre incluso cuando la p�gina no se ha imprimido
-  // si quieres hacer la redirecci�n s�lo si la p�gina se ha imprimido
-  // inserta la siguiente frase arriba 
-  goNow();
-} 
-</script>
+table.sample {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: solid;
+	border-color: #000;
+	border-collapse: collapse;
+	background-color: white;
+	font-family: arial;
+	font-size: 10px;
+}
+
+table.sample2 {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: solid;
+	border-color: #000;
+	border-collapse: collapse;
+	background-color: white;
+	font-family: arial;
+	font-size: 10px;
+	
+}
+
+table.sample td {
+	border-width: 0.5px;
+	padding: 0px;
+	border-style: solid;
+	border-color: #000;
+	background-color: white;
+	border-collapse: collapse;
+font-family: arial;
+	
+}
+
+
+table.sample2 td {
+	border-width: 1px;
+	padding: 0px;
+	border-style: solid;
+	border-color: #000;
+	background-color: white;
+	border-collapse: collapse;
+font-family:arial;
+}
+</style>
+
+
 </head>
 
 <body>
 <div id="ancho_boletin_lb">
 <table border="0" align="left" class="tabla">
-  <tr>
-    <td width="229" align="left"><img src="../../images/gif/me_logo.gif" width="200" height="51" border="0"></td>
+  <tr><td colspan="4">
+  <table>
+	<tr>
+    <td width="429" align="left"><img src="../../images/gif/me_logo.gif" width="200" height="51" border="0"></td>
     <td width="588" align="right"><span class="texto_pequeno_gris"><strong><?php echo $row_colegio['nomcol']; ?></strong><br>
 Coordinaci&oacute;n de Evaluaci&oacute;n y Control del Estudios<br>
 <?php echo $row_colegio['dircol']; ?></span></td>
-    <td width="92" align="right" valign="middle"><img src="../../images/<?php echo $row_colegio['logocol']; ?>" width="100" height="100" align="absmiddle"></td>
+    <td width="92" align="left" valign="middle"><img src="../../images/<?php echo $row_colegio['logocol']; ?>" width="100" height="100" align="absmiddle"></td>
     </tr>
   <tr>
     <td colspan="3" align="center"><span class="texto_mediano_grande"><em><strong>INFORME DE ACTUACION DEL ESTUDIANTE </strong><strong></strong></em></span><em class="texto_mediano_gris"><strong>
-        <?php echo $_GET['lapso']; ?> LAPSO - A&Ntilde;O ESCOLAR : 2010-2011</strong></em></td>
+        <?php echo $_GET['lapso']; ?> LAPSO - A&Ntilde;O ESCOLAR : <?php echo $row_confi1['descripcion'];?></strong></em></td>
+  </tr>
+  </table>
+  </td>
   </tr>
   <tr>
     <td colspan="2" align="left">
-      <table border="0" style="border-bottom:1px solid; border-left:1px solid; border-right:1px solid; border-top:1px solid;">
+      <table style="border:1px solid;background-color:#fff;">
       <tr>
         <td height="20" align="left" valign="bottom" class="texto_mediano_gris" style="width:18cm"><strong>&nbsp;CEDULA:</strong> <em><?php echo $row_alumno['indicador_nacionalidad']; ?>-<?php echo $row_alumno['cedula']; ?></em>&nbsp;&nbsp;<strong>APELLIDOS Y NOMBRES:</strong> <em><?php echo $row_alumno['apellido']; ?>, <?php echo $row_alumno['nombre']; ?></em></td>
       </tr>
@@ -336,14 +415,14 @@ Coordinaci&oacute;n de Evaluaci&oacute;n y Control del Estudios<br>
         <td align="left" valign="bottom" class="texto_mediano_gris"><strong>&nbsp;A&Ntilde;O Y SECCION:</strong> <em><?php echo $row_alumno['anio']." ".$row_alumno['descripcion']; ?></em></td>
       </tr>
       <tr>
-        <td align="left" valign="bottom" class="texto_mediano_gris"><strong>&nbsp;DOCENTE:</strong> <em><?php echo $row_profe_guia['apellido_docente']; ?>, <?php echo $row_profe_guia['nombre_docente']; ?></em></td>
+        <td align="left" valign="bottom" class="texto_mediano_gris"><strong>&nbsp;DOCENTE GUIA:</strong> <em><?php echo $row_profe_guia['apellido_docente']; ?>, <?php echo $row_profe_guia['nombre_docente']; ?></em></td>
       </tr>
       <tr>
         <td align="left" class="texto_mediano_gris"><strong>&nbsp;NOMBRE DEL PROYECTO: </strong><em class="texto_mediano_grande"><?php echo $row_alumno['nombre_proyecto']; ?></em></td>
       </tr>
     </table>
       <br></td>
-    <td align="center"><table border="1" align="center" cellpadding="0" cellspacing="0" bordercolorlight="#000000" bordercolordark="#000000" class="texto_pequeno_gris" style="width:2cm">
+    <td align="center"><table class="sample" align="center" cellpadding="0" cellspacing="0" bordercolorlight="#000000" bordercolordark="#000000" class="tabla" style="width:2cm; font-size:11px;">
       <tr>
         <td colspan="2" align="center" valign="middle"><strong><span class="texto_mediano_gris">&nbsp;APRECIACION&nbsp;</span></strong></td>
         <td colspan="2" align="center" valign="middle"><strong><span class="texto_mediano_gris">&nbsp;INASISTENCIAS&nbsp;</span></strong></td>
@@ -351,188 +430,264 @@ Coordinaci&oacute;n de Evaluaci&oacute;n y Control del Estudios<br>
       <tr>
         <td align="center" valign="middle"><strong><span class="texto_mediano_gris">CUAL</span></strong></td>
         <td align="center" valign="middle"><strong><span class="texto_mediano_gris">CUAN</span></strong></td>
-        <td align="center" valign="middle"><strong><span class="texto_mediano_gris">TOTAL</span></strong></td>
+        <td align="center" valign="middle"><strong><span class="texto_mediano_gris">EN EL LAPSO</span></strong></td>
        <?php /* <td align="center" valign="middle"><strong><span class="texto_mediano_gris">%</span></strong></td> */?>
         </tr>
       <tr>
         <td align="center" valign="middle">I</td>
         <td align="center" valign="middle">0-9</td>
-        <td align="center" colspan="2"  valign="middle" class="texto_mediano_gris"><?php if($totalRows_inasistencia>0){echo $row_inasistencia['inasistencia_alumno'];}else{echo "0";}?></td>
+        <td align="center" colspan="2"  valign="middle" class="texto_mediano_gris"><?php if($totalRows_inasistencia>0){echo $row_inasistencia['inasistencia'];}else{echo "0";}?></td>
        <?php /* <td align="center" valign="middle"><?php if($totalRows_inasistencia>0){$porcentaje=($row_inasistencia['inasistencia_alumno']*100)/$row_inasistencia['hora_clase'];
 echo $porcentaje."%";}else{echo "0%";}?></td>*/?>
         </tr>
       <tr>
         <td align="center" valign="middle">P</td>
         <td align="center" valign="middle">10-13</td>
-        <td colspan="2" align="center" valign="middle"><strong><span class="texto_mediano_gris">PROMEDIO A&Ntilde;O</span></strong></td>
+        <td colspan="2" align="center" valign="middle"><strong><span class="texto_mediano_gris">PROMEDIO DEL LAPSO</span></strong></td>
         </tr>
       <tr>
         <td align="center" valign="middle">A</td>
         <td align="center" valign="middle">14-17</td>
-        <td colspan="2" rowspan="2" align="center" valign="middle"><strong><span class="texto_mediano_gris"><?php echo $row_mate15['def'];?></span></strong></td>
+        <td colspan="2" rowspan="2" align="center" valign="middle"><strong><span class="texto_grande_gris"><?php 
+          
+           $lapso=$_GET['lapso'];   
+           if($lapso==1) {        
+           $ept=$row_mate141['def'];
+           }
+           if($lapso==2) {
+           $ept=$row_mate142['def'];
+           }
+           if($lapso==3) {
+           $ept=$row_mate143['def'];
+           }
+           
+           $sumam=$row_mate15['def'];
+           
+           if($ept>0) {
+           	$cantm=$totalRows_contarm+1;
+           	}else {
+           	 $cantm=$totalRows_contarm;	
+           	}
+           	
+           	$prom=($ept+$sumam)/$cantm;
+           echo ROUND($prom,2);?></span></strong></td>
         </tr>
       <tr>
         <td align="center" valign="middle">C</td>
         <td align="center" valign="middle">18-20</td>
         </tr>
+        
+        <tr>
+        <td align="center" colspan="2" valign="middle"><b>Posici&oacute;n General</b></td>
+         <td align="center" colspan="2" valign="middle">
+         <strong><span class="texto_grande_gris">
+
+
+<?php $num=$totalRows_posicion; do { ?>
+
+<?php if($row_posicion['cedula']==$_GET['cedula']){ echo $num; }?>
+
+<?php $num=$num-1;} while ($row_posicion = mysql_fetch_assoc($posicion)); ?>
+        
+        </span></span></strong>
+         
+         </td>
+        </tr>
+         <tr>
+        <td align="center" colspan="2" valign="middle"><b>Posici&oacute;n en la Secci&oacute;n</b></td>
+        <td align="center" colspan="2" valign="middle">
+        <strong><span class="texto_grande_gris">
+
+&nbsp;
+<?php $num=$totalRows_posicion_c; do { ?>
+
+<?php if($row_posicion_c['cedula']==$_GET['cedula']){ echo $num; }?>
+
+<?php $num=$num-1;} while ($row_posicion_c = mysql_fetch_assoc($posicion_c)); ?>
+
+
+
+
+        
+        </span></span></strong>&nbsp;
+        </td>
+        </tr>
+        
     </table></td>
     </tr>
   <tr>
     <td colspan="3" align="center"><table border="0" >
       <tr>
-        <td width="500" align="left" valign="top"><table border="1" cellpadding="0" cellspacing="0" style="font-family:verdana; font-size: 10px; color:#424242; ">
-            <tr>
-              <td width="295" align="center"><span style="font-size:14px; font-family: verdana; color: #424242"><strong>ASIGNATURAS</strong></span></td>
-              <td width="50"  align="center"><em>DEF<br />CUA</em></td>
-              <td width="50" align="center"><em>DEF<br />L1</em></td>
-              <td width="50"  align="center"><em>DEF<br />CUA</em></td>
-              <td width="50" align="center"><em>DEF<br />L2</em></td>
-            <?php if($totalRows_asignatura3>0){ // NOTAS DE TERCER LAPSO
-                    ?>
-              <td width="50"  align="center"><em>DEF<br />CUA</em></td>
-              <td width="50" align="center"><em>DEF<br />L3</em></td>
-              <?php } ?>
-              <td width="50"  align="center"><em>DEF</em></td>
-<?php /*
-              <td align="center"><span class="texto_mediano_gris"><strong><em>Def. <br>
-A&ntilde;o<br>
-Escolar</em></strong></span></td>
-*/?>
-            </tr>
+        <td width="500"  align="left" valign="top">
+        
+        <table class="sample" >
+			<tr>
             <?php // NOTAS DE PRIMER LAPSO
                     ?>
             <td colspan="3">
-               <table width="100%" height="100%"  style="font-size:9px;" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#fff" bordercolor="#000000" bordercolordark="#000000" class="borde">
+               <table class="sample2" >
+              <tr>
+              <td width="295" align="center"><span style="font-size:14px; "><strong>ASIGNATURAS</strong></span></td>
+              <td width="50"  align="center" ><em>DEF<br />CUA</em></td>
+              <td width="50" align="center" ><em>DEF<br />L1</em></td>
+              </tr>
             <?php do { ?>
               <tr>
-                <td width="300"  height="20" align="center"><span><strong><?php echo $row_asignatura1['nombre']; ?></strong></span></td>
+                <td width="300"  height="20" align="center" ><span><?php echo $row_asignatura1['nombre']; ?>	</span></td>
                 <td width="50" align="center" ><em class="texto_mediano_grande">
                    <?php if($row_asignatura1['def']==0){ echo "-"; }?> <?php if(($row_asignatura1['def']>0) and ($row_asignatura1['def']<10)){ echo "I";} if(($row_asignatura1['def']>9) and ($row_asignatura1['def']<14)){ echo "P";} if(($row_asignatura1['def']>13) and ($row_asignatura1['def']<18)){ echo "A";} if(($row_asignatura1['def']>17) and ($row_asignatura1['def']<21)){ echo "C"; }?>
                 </em></td>
-                <td width="50" align="center"><span ><b><?php if($row_asignatura1['def']==0){ echo 'NC';}?> <?php if(($row_asignatura1['def']>0) and ($row_asignatura1['def']<10)) { echo "0".$row_asignatura1['def']; }?> <?php if($row_asignatura1['def']>9){ echo $row_asignatura1['def']; }?></b></span></td>
+                <td width="50" align="center" ><span ><b><?php if($row_asignatura1['def']==0){ if(($row_asignatura1['p1f1']==97)or($row_asignatura1['p2f1']==97)or($row_asignatura1['p3f1']==97)or($row_asignatura1['p4f1']==97)or($row_asignatura1['p5f1']==97)or ($row_asignatura1['p1f1']==98)or($row_asignatura1['p2f1']==98)or($row_asignatura1['p3f1']==98)or($row_asignatura1['p4f1']==98)or($row_asignatura1['p5f1']==98)){ echo '01';}else{ echo 'NC';}}?> <?php if(($row_asignatura1['def']>0) and ($row_asignatura1['def']<10)) { echo "0".$row_asignatura1['def']; }?> <?php if($row_asignatura1['def']>9){ echo $row_asignatura1['def']; }?></b></span></td>
 <?php /*
                 <td align="center"><span class="texto_mediano_gris" style="font-size:12px; font-weight:bold; font-family:Verdana, Geneva, sans-serif"><?php $df=$row_asignatura['Definitiva_Curso']; echo number_format($df, 0); ?></span></td>
 
 */?>
               </tr>
               <?php } while ($row_asignatura1 = mysql_fetch_assoc($asignatura1)); ?>
+  
+  <?php //EPT PRIMER LAPSO ?>
+  <?php if($totalRows_mate141>0){?>
+	<tr>
+        
+	<td align="center" height="20"><span >EDUCACION PARA EL TRABAJO</span></td>
+                <td align="center" >
+                   <?php if($row_mate141['def']==0){ echo "-"; }?> <?php if(($row_mate141['def']>=1) and ($row_mate141['def']<=9)){ echo "I";} if(($row_mate141['def']>9) and ($row_mate141['def']<14)){ echo "P";} if(($row_mate141['def']>13) and ($row_mate141['def']<18)){ echo "A";} if(($row_mate141['def']>17) and ($row_mate141['def']<21)){ echo "C"; }?>
+               </td>
+	 <td align="center" ><span ><b><?php if($row_mate141['def']==0){ if(($row_mate141['p1f1']==97)or($row_mate141['p2f1']==97)or($row_mate141['p3f1']==97)or($row_mate141['p4f1']==97)or($row_mate141['p5f1']==97)or ($row_mate141['p1f1']==98)or($row_mate141['p2f1']==98)or($row_mate141['p3f1']==98)or($row_mate141['p4f1']==98)or($row_mate141['p5f1']==98)){ echo '01';}else{ echo 'NC';}}?> <?php if(($row_mate141['def']>0) and ($row_mate141['def']<10)) { echo "0".$row_mate141['def']; }?> <?php if($row_mate141['def']>9){ echo $row_mate141['def']; }?></b></span></td>
+	 </tr>
+	 <?php } ?>
+	 
                </table>
             </td>
 
-              <?php // NOTAS DE SEGUNDO LAPSO
+
+            <?php if($totalRows_asignatura2>0){
+					 // NOTAS DE SEGUNDO LAPSO
                     ?>
             <td colspan="2">
-                <table width="100%" height="100%"  style="font-size:9px;" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#fff" bordercolor="#000000" bordercolordark="#000000" class="borde">
+              <table class="sample2">
+                <tr>
+					<td width="50"  align="center"><em>DEF<br />CUA</em></td>
+               <td width="50" align="center" ><em>DEF<br />L2</em></td>                
+                </tr>
             <?php do { ?>
               <tr>
                
-                <td width="50"align="center" ><em class="texto_mediano_grande">
+                <td width="50" height="20" align="center" ><em class="texto_mediano_grande">
                    <?php if($row_asignatura2['def']==0){ echo "-"; }?> <?php if(($row_asignatura2['def']>0) and ($row_asignatura2['def']<10)){ echo "I";} if(($row_asignatura2['def']>9) and ($row_asignatura2['def']<14)){ echo "P";} if(($row_asignatura2['def']>13) and ($row_asignatura2['def']<18)){ echo "A";} if(($row_asignatura2['def']>17) and ($row_asignatura2['def']<21)){ echo "C"; }?>
                 </em></td>
-                <td width="50" align="center"><span ><b><?php if($row_asignatura2['def']==0){ echo 'NC';}?> <?php if(($row_asignatura2['def']>0) and ($row_asignatura2['def']<10)) { echo "0".$row_asignatura2['def']; }?> <?php if($row_asignatura2['def']>9){ echo $row_asignatura2['def']; }?></b></span></td>
+                <td width="50" height="20" align="center"><span ><b><?php if($row_asignatura2['def']==0){ if(($row_asignatura2['p1f1']==97)or($row_asignatura2['p2f1']==97)or($row_asignatura2['p3f1']==97)or($row_asignatura2['p4f1']==97)or($row_asignatura2['p5f1']==97)or ($row_asignatura2['p1f1']==98)or($row_asignatura2['p2f1']==98)or($row_asignatura2['p3f1']==98)or($row_asignatura2['p4f1']==98)or($row_asignatura2['p5f1']==98)){ echo '01';}else{ echo 'NC';}}?>  <?php if(($row_asignatura2['def']>0) and ($row_asignatura2['def']<10)) { echo "0".$row_asignatura2['def']; }?> <?php if($row_asignatura2['def']>9){ echo $row_asignatura2['def']; }?></b></span></td>
 <?php /*
                 <td align="center"><span class="texto_mediano_gris" style="font-size:12px; font-weight:bold; font-family:Verdana, Geneva, sans-serif"><?php $df=$row_asignatura['Definitiva_Curso']; echo number_format($df, 0); ?></span></td>
 
 */?>
               </tr>
               <?php } while ($row_asignatura2 = mysql_fetch_assoc($asignatura2)); ?>
+                <?php //EPT SEGUNDO LAPSO ?>
+          <tr>
+         <?php if($totalRows_mate142>0){?>
+         <td align="center" height="20">
+                   <?php if($row_mate142['def']==0){ echo "-"; }?> <?php if(($row_mate142['def']>=1) and ($row_mate142['def']<=9)){ echo "I";} if(($row_mate142['def']>9) and ($row_mate142['def']<14)){ echo "P";} if(($row_mate142['def']>13) and ($row_mate142['def']<18)){ echo "A";} if(($row_mate142['def']>17) and ($row_mate142['def']<21)){ echo "C"; }?>
+               </td>
+	 <td align="center" height="20" ><span ><b><?php if($row_mate142['def']==0){ if(($row_mate142['p1f1']==97)or($row_mate142['p2f1']==97)or($row_mate142['p3f1']==97)or($row_mate142['p4f1']==97)or($row_mate142['p5f1']==97)or ($row_mate142['p1f1']==98)or($row_mate142['p2f1']==98)or($row_mate142['p3f1']==98)or($row_mate142['p4f1']==98)or($row_mate142['p5f1']==98)){ echo '01';}else{ echo 'NC';}}?> <?php if(($row_mate142['def']>0) and ($row_mate142['def']<10)) { echo "0".$row_mate142['def']; }?> <?php if($row_mate142['def']>9){ echo $row_mate142['def']; }?></b></span></td>
+	 </tr>
+			<?php } ?>
+              
                </table>
 
             </td>
+			<?php } 
+			if($totalRows_asignatura3>0){ // NOTAS DE TERCER LAPSO
+			
+			?>
 
-            <?php if($totalRows_asignatura3>0){
-                        // NOTAS DE TERCER LAPSO
-                    ?>
             <td colspan="2">
-                <table width="100%" height="100%"  style="font-size:9px;" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#fff" bordercolor="#000000" bordercolordark="#000000" class="borde">
+                <table class="sample2">
+                <tr>
+					<td width="50"  align="center"><em>DEF<br />CUA</em></td>
+               <td width="50" align="center" ><em>DEF<br />L3</em></td>                
+                </tr>
             <?php do { ?>
               <tr>
 
-                <td width="50" align="center" ><em class="texto_mediano_grande">
+                <td width="50" height="20" align="center" ><em class="texto_mediano_grande">
                    <?php if($row_asignatura3['def']==0){ echo "-"; }?> <?php if(($row_asignatura3['def']>0) and ($row_asignatura3['def']<10)){ echo "I";} if(($row_asignatura3['def']>9) and ($row_asignatura3['def']<14)){ echo "P";} if(($row_asignatura3['def']>13) and ($row_asignatura3['def']<18)){ echo "A";} if(($row_asignatura3['def']>17) and ($row_asignatura3['def']<21)){ echo "C"; }?>
                 </em></td>
-                <td width="50" align="center"><span ><b><?php if($row_asignatura3['def']==0){ echo 'NC';}?> <?php if(($row_asignatura3['def']>0) and ($row_asignatura3['def']<10)) { echo "0".$row_asignatura3['def']; }?> <?php if($row_asignatura3['def']>9){ echo $row_asignatura3['def']; }?></b></span></td>
+                <td width="50" align="center"><span ><b><?php if($row_asignatura3['def']==0){ if(($row_asignatura3['p1f1']==97)or($row_asignatura3['p2f1']==97)or($row_asignatura3['p3f1']==97)or($row_asignatura3['p4f1']==97)or($row_asignatura3['p5f1']==97)or ($row_asignatura3['p1f1']==98)or($row_asignatura3['p2f1']==98)or($row_asignatura3['p3f1']==98)or($row_asignatura3['p4f1']==98)or($row_asignatura3['p5f1']==98)){ echo '01';}else{ echo 'NC';}}?> <?php if(($row_asignatura3['def']>0) and ($row_asignatura3['def']<10)) { echo "0".$row_asignatura3['def']; }?> <?php if($row_asignatura3['def']>9){ echo $row_asignatura3['def']; }?></b></span></td>
 <?php /*
                 <td align="center"><span class="texto_mediano_gris" style="font-size:12px; font-weight:bold; font-family:Verdana, Geneva, sans-serif"><?php $df=$row_asignatura['Definitiva_Curso']; echo number_format($df, 0); ?></span></td>
 
 */?>
               </tr>
               <?php } while ($row_asignatura3 = mysql_fetch_assoc($asignatura3)); ?>
+              <tr>
+         <?php //EPT TERCER LAPSO ?>
+ 			<?php if($totalRows_mate143>0){?>
+         <td align="center" height="20">
+                   <?php if($row_mate143['def']==0){ echo "-"; }?> <?php if(($row_mate143['def']>=1) and ($row_mate143['def']<=9)){ echo "I";} if(($row_mate143['def']>9) and ($row_mate143['def']<14)){ echo "P";} if(($row_mate143['def']>13) and ($row_mate143['def']<18)){ echo "A";} if(($row_mate143['def']>17) and ($row_mate143['def']<21)){ echo "C"; }?>
+               </td>
+	 <td align="center"><span ><b><?php if($row_mate143['def']==0){ if(($row_mate143['p1f1']==97)or($row_mate143['p2f1']==97)or($row_mate143['p3f1']==97)or($row_mate143['p4f1']==97)or($row_mate143['p5f1']==97)or ($row_mate143['p1f1']==98)or($row_mate143['p2f1']==98)or($row_mate143['p3f1']==98)or($row_mate143['p4f1']==98)or($row_mate143['p5f1']==98)){ echo '01';}else{ echo 'NC';}}?> <?php if(($row_mate143['def']>0) and ($row_mate143['def']<10)) { echo "0".$row_mate143['def']; }?> <?php if($row_mate143['def']>9){ echo $row_mate143['def']; }?></b></span></td>
+         <?php } ?>              
+              </tr>
                </table>
 
             </td>
 <?php } ?>
 
-
- <?php if($totalRows_asignatura_final>0){
-                        // DEFINITIVA DE ANIO
+<?php if($totalRows_asignatura_final>0){
                     ?>
             <td colspan="2">
-                <table width="100%" height="100%"  style="font-size:9px;" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#fff" bordercolor="#000000" bordercolordark="#000000" class="borde">
+                <table class="sample2">
+                <tr>
+						<td width="50"  align="center" ><em>DEF<br />A&Ntilde;O</em></td>                
+                </tr>
             <?php do { ?>
               <tr>
 
-                <td width="50" align="center" style="font-size:12px"><span ><b><?php if($row_asignatura_final['def']==0){ echo 'NC';}?> <?php if(($row_asignatura_final['def']>0) and ($row_asignatura_final['def']<10)) { echo "0".$row_asignatura_final['def']; }?> <?php if($row_asignatura_final['def']>9){ echo $row_asignatura_final['def']; }?></b></span></td>
-
-<?php /*
-                <td align="center"><span class="texto_mediano_gris" style="font-size:12px; font-weight:bold; font-family:Verdana, Geneva, sans-serif"><?php $df=$row_asignatura['Definitiva_Curso']; echo number_format($df, 0); ?></span></td>
+                <td width="50" height="20" align="center" style="font-size:12px;"><span ><b><?php if($row_asignatura_final['def']==0){ echo 'NC';}?> <?php if(($row_asignatura_final['def']>0) and ($row_asignatura_final['def']<10)) { echo "0".$row_asignatura_final['def']; }?> <?php if($row_asignatura_final['def']>9){ echo $row_asignatura_final['def']; }?></b></span></td>
 
 
-*/?>
+               <?php /*  <td align="center"><span class="texto_mediano_gris" style="font-size:12px; font-weight:bold; font-family:Verdana, Geneva, sans-serif"><?php $df=$row_asignatura['Definitiva_Curso']; echo number_format($df, 0); ?></span></td> */?>
+
+
+
               </tr>
               <?php } while ($row_asignatura_final = mysql_fetch_assoc($asignatura_final)); ?>
-               </table>
-
-            </td>
-<?php } ?>
-
-
-  <?php if($totalRows_mate141>0){?>
-	<tr>
-        <?php //EPT PRIMER LAPSO ?>
-	<td align="center"><span ><strong>EDUCACION PARA EL TRABAJO</strong></span></td>
-                <td align="center" >
-                   <?php if($row_mate141['def']==0){ echo "-"; }?> <?php if(($row_mate141['def']>=1) and ($row_mate141['def']<=9)){ echo "I";} if(($row_mate141['def']>9) and ($row_mate141['def']<14)){ echo "P";} if(($row_mate141['def']>13) and ($row_mate141['def']<18)){ echo "A";} if(($row_mate141['def']>17) and ($row_mate141['def']<21)){ echo "C"; }?>
-               </td>
-	 <td align="center"><span ><b><?php if($row_mate141['def']==0){ echo 'NC';}?> <?php if(($row_mate141['def']>0) and ($row_mate141['def']<10)) { echo "0".$row_mate141['def']; }?> <?php if($row_mate141['def']>9){ echo $row_mate141['def']; }?></b></span></td>
-
-         <?php //EPT SEGUNDO LAPSO ?>
-         <td align="center" >
-                   <?php if($row_mate142['def']==0){ echo "-"; }?> <?php if(($row_mate142['def']>=1) and ($row_mate142['def']<=9)){ echo "I";} if(($row_mate142['def']>9) and ($row_mate142['def']<14)){ echo "P";} if(($row_mate142['def']>13) and ($row_mate142['def']<18)){ echo "A";} if(($row_mate142['def']>17) and ($row_mate142['def']<21)){ echo "C"; }?>
-               </td>
-	 <td align="center"><span ><b><?php if($row_mate142['def']==0){ echo 'NC';}?> <?php if(($row_mate142['def']>0) and ($row_mate142['def']<10)) { echo "0".$row_mate142['def']; }?> <?php if($row_mate142['def']>9){ echo $row_mate142['def']; }?></b></span></td>
-
-         <?php //EPT TERCER LAPSO ?>
-         <?php if($totalRows_mate143>0){?>
-         <td align="center" >
-                   <?php if($row_mate143['def']==0){ echo "-"; }?> <?php if(($row_mate143['def']>=1) and ($row_mate143['def']<=9)){ echo "I";} if(($row_mate143['def']>9) and ($row_mate143['def']<14)){ echo "P";} if(($row_mate143['def']>13) and ($row_mate143['def']<18)){ echo "A";} if(($row_mate143['def']>17) and ($row_mate143['def']<21)){ echo "C"; }?>
-               </td>
-	 <td align="center"><span ><b><?php if($row_mate143['def']==0){ echo 'NC';}?> <?php if(($row_mate143['def']>0) and ($row_mate143['def']<10)) { echo "0".$row_mate143['def']; }?> <?php if($row_mate143['def']>9){ echo $row_mate143['def']; }?></b></span></td>
-         <?php } ?>
-        
-
-<?php //DEF EPT ?>
+             
+        	<?php //DEF EPT ?>
          <?php if($totalRows_mate14_final>0){?>
+			<tr>
+	 		<td height="20" align="center" style="font-size:12px"><span ><b><?php if($row_mate14_final['def']==0){ echo 'NC';}?> <?php if(($row_mate14_final['def']>0) and ($row_mate14_final['def']<10)) { echo "0".$row_mate14_final['def']; }?> <?php if($row_mate14_final['def']>9){ echo $row_mate14_final['def']; }?></b></span></td>
+         <?php } }  ?>
+             </td>
+          </tr>     
+      </table>
 
-	 <td align="center" style="font-size:12px"><span ><b><?php if($row_mate14_final['def']==0){ echo 'NC';}?> <?php if(($row_mate14_final['def']>0) and ($row_mate14_final['def']<10)) { echo "0".$row_mate14_final['def']; }?> <?php if($row_mate14_final['def']>9){ echo $row_mate14_final['def']; }?></b></span></td>
-         <?php } ?>
+
+
+  
+
+    
+
+
          
 	</tr>
 
-<?php } ?>
+
 
 
 
           </table></td>
-        <td width="300" valign="top"><table border="1" cellpadding="0" cellspacing="0" style="width:10cm; margin-left:0">
+        <td width="300" valign="top"><table style="border:1px solid; background-color:#fff; height:200px;" style="width:10cm; margin-left:0">
           <tr>
-            <td height="30" align="center" bgcolor="#CCCCCC" class="texto_pequeno_gris"><strong class="texto_mediano_grande">DESCRIPCION DEL ESTUDIANTE</strong></td>
+            <td height="30" align="center" bgcolor="#CCCCCC" style="border-bottom:1px solid" class="texto_pequeno_gris"><strong class="texto_mediano_grande">DESCRIPCION DEL ESTUDIANTE</strong></td>
           </tr>
+          
           <tr>
             <td class="texto_mediano_gris"><br>
-              <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:11cm">
+              <table  style="width:11cm">
               <tr>
-                <td><?php echo $row_boletin_des['descripcion']; ?></td>
+                <td  style="padding-left:10px;"><?php echo $row_boletin_des['descripcion']; ?></td>
               </tr>
             </table>
               <br>
@@ -540,7 +695,7 @@ Escolar</em></strong></span></td>
               <strong>&nbsp;&nbsp;Materia Pendiente:</strong> <?php echo $row_boletin_des['nom_mate_pendiente']; ?> <strong>Calificaci&oacute;n:</strong> <?php echo $row_boletin_des['nota_mate_pendiente']; }?>
 </td>
           </tr>
-        </table></td>
+        </table><span style="font-family:arial; font-size:10px;">Intersoft | Software Educativo &copy; 2002-2012</span></td>
       </tr>
     </table></td>
   </tr>
@@ -552,14 +707,14 @@ Escolar</em></strong></span></td>
         <td style="width:1cm">&nbsp;</td>
         <td style="border-bottom:1px solid">&nbsp;</td>
         <td style="width:1cm">&nbsp;</td>
-        <td style="border-bottom:1px solid">&nbsp;</td>
+      <td style="border-bottom:1px solid" width="200">&nbsp;</td>
       </tr>
       <tr class="texto_mediano_gris">
-        <td align="center">DOCENTE INTEGRADOR - GUIA</td>
+        <td align="center">DOCENTE GUIA</td>
         <td align="center">&nbsp;</td>
         <td align="center">COOR. DEPARTAMENTO DE EVALUACION</td>
-        <td align="center">&nbsp;</td>
-        <td align="center">COOR. PEDAG&Oacute;GICO</td>
+      <td align="center">&nbsp;</td>
+        <td align="center">COORDINADOR PEDAGOGICO</td>
       </tr>
     </table></td>
   </tr>
@@ -567,22 +722,3 @@ Escolar</em></strong></span></td>
 </div>
 </body>
 </html>
-<?php
-mysql_free_result($colegio);
-mysql_free_result($alumno);
-
-mysql_free_result($boletin_des);
-
-mysql_free_result($profe_guia);
-
-mysql_free_result($asignatura);
-mysql_free_result($asignatura1);
-mysql_free_result($asignatura2);
-mysql_free_result($asignatura3);
-mysql_free_result($asignatura_final);
-mysql_free_result($mate141);
-mysql_free_result($mate142);
-mysql_free_result($mate143);
-mysql_free_result($mate14_final);
-mysql_free_result($row_inasistencia);
-?>

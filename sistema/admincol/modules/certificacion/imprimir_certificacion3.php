@@ -1512,7 +1512,6 @@ $totalRows_nota14_anio6 = mysql_num_rows($nota14_anio6);
 <title>SISTEMA INTERSOFT |Software Educativo</title>
 <link href="../../css/form_vista_certificacion.css" rel="stylesheet" type="text/css" >
 <link href="../../css/form_impresion_certificacion.css" rel="stylesheet" type="text/css" media="print">
-
 <?php // SCRIPT PARA BLOQUEAR EL ENTER 
 ?>
 <script>
@@ -1611,10 +1610,10 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 	<div class="cod_plantel">
 	<?php echo $row_institucion['cod_plantel'];?>
 	</div>
-	<div class="titulo_info" style="width:1.3cm;">
+	<div class="titulo_info">
 	<b>Nombre:</b> 
 	</div>
-	<div class="nombre_plantel" style="font-size:6.3pt;width:8.3cm;">
+	<div class="nombre_plantel" >
 	<?php echo $row_institucion['nombre_plantel'];?>
 	</div>
 	<div class="titulo_info">
@@ -1745,7 +1744,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 <div class="cuadro_grande" >
 <?php if($totalRows_plantelcurso3>0){echo $row_plantelcurso3['nombre_plantel'];}else{ echo "*";} ?>
 </div>
-<div class="cuadro_mediano" style="font-size:7px;">
+<div class="cuadro_mediano" style="font-size:8px;">
 <?php if($totalRows_plantelcurso3>0){echo $row_plantelcurso3['localidad'];}else{ echo "*";} ?>
 </div>
 <div class="cuadrito" style="border-right:1px solid;">
@@ -1758,7 +1757,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso1>0){echo $row_plantelcurso1['nombre_plantel'];}else{ echo "*";} ?>
 </div>
-<div class="cuadro_mediano2" style="font-size:7px;">
+<div class="cuadro_mediano2" style="font-size:8px;">
 <?php if($totalRows_plantelcurso1>0){echo $row_plantelcurso1['localidad'];}else{ echo "*";} ?>
 </div>
 <div class="cuadrito">
@@ -1771,7 +1770,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso4>0){echo $row_plantelcurso4['nombre_plantel'];}else{ echo "*";} ?>
 </div>
-<div class="cuadro_mediano" style="font-size:7px;">
+<div class="cuadro_mediano" style="font-size:8px;">
 <?php if($totalRows_plantelcurso4>0){echo $row_plantelcurso4['localidad'];}else{ echo "*";} ?>
 </div>
 <div class="cuadrito" style="border-right:1px solid;">
@@ -1784,7 +1783,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso2>0){echo $row_plantelcurso2['nombre_plantel'];}else{ echo "*";} ?>
 </div>
-<div class="cuadro_mediano2" style="font-size:7px;">
+<div class="cuadro_mediano2" style="font-size:8px;">
 <?php if($totalRows_plantelcurso2>0){echo $row_plantelcurso2['localidad'];}else{ echo "*";} ?>
 </div>
 <div class="cuadrito">
@@ -2365,25 +2364,25 @@ if ($totalRows_nota9_anio4>0){ // NOTA 9 DE ANIO 4
 if (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0)){ // NOTA 9 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio1>0)or($totalRows_nota8_anio4>0)) and (($totalRows_nota9_anio1==0)and($totalRows_nota9_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 9 
 ?>
@@ -2445,25 +2444,25 @@ if ($totalRows_nota10_anio4>0){ // NOTA 10 DE ANIO 4
 if (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0)){ // NOTA 10 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio1>0)or($totalRows_nota9_anio4>0)) and (($totalRows_nota10_anio1==0)and($totalRows_nota10_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 10 
 ?>
@@ -2525,25 +2524,25 @@ if ($totalRows_nota11_anio4>0){ // NOTA 11 DE ANIO 4
 if (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0)){ // NOTA 11 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio1>0)or($totalRows_nota10_anio4>0)) and (($totalRows_nota11_anio1==0)and($totalRows_nota11_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 11 
 ?>
@@ -2606,25 +2605,25 @@ if ($totalRows_nota12_anio4>0){ // NOTA 12 DE ANIO 4
 if (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0)){ // NOTA 12 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio1>0)or($totalRows_nota11_anio4>0)) and (($totalRows_nota12_anio1==0)and($totalRows_nota12_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 12 
 ?>
@@ -2686,25 +2685,25 @@ if ($totalRows_nota13_anio4>0){ // NOTA 13 DE ANIO 4
 if (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0)){ // NOTA 13 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio1>0)or($totalRows_nota12_anio4>0)) and (($totalRows_nota13_anio1==0)and($totalRows_nota13_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 13 
 ?>
@@ -2765,42 +2764,49 @@ if ($totalRows_nota14_anio4>0){ // NOTA 14 DE ANIO 4
 if (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0)){ // NOTA 14 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio1>0)or($totalRows_nota13_anio4>0)) and (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 14 
 ?>
 
-	<div class="mate">
+	<div class="mate" style="text-align:center;">
+	*
 	</div>
-	<div class="no">
+	<div class="no" style="text-align:center;">
+	*
 	</div>
-	<div class="letras">
+	<div class="letras" style="text-align:center;">
+	*
 	</div>
-	<div class="te">
+	<div class="te" style="text-align:center;">
+	*
 	</div>
-	<div class="fmes">
+	<div class="fmes" style="text-align:center;">
+	*
 	</div>
-	<div class="fanio">
+	<div class="fanio" style="text-align:center;">
+	*
 	</div>
-	<div class="no_plantel">
+	<div class="no_plantel" style="text-align:center;">
+	*
 	</div>
 
 
@@ -3366,25 +3372,25 @@ if ($totalRows_nota9_anio5>0){ // NOTA 9 DE ANIO 5
 if (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0)){ // NOTA 9 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio2>0)or($totalRows_nota8_anio5>0)) and (($totalRows_nota9_anio2==0)and($totalRows_nota9_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 9 
 ?>
@@ -3447,25 +3453,25 @@ if ($totalRows_nota10_anio5>0){ // NOTA 10 DE ANIO 5
 if (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0)){ // NOTA 10 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio2>0)or($totalRows_nota9_anio5>0)) and (($totalRows_nota10_anio2==0)and($totalRows_nota10_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 10 
 ?>
@@ -3527,26 +3533,26 @@ if ($totalRows_nota11_anio5>0){ // NOTA 11 DE ANIO 5
 if (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0)){ // NOTA 11 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio2>0)or($totalRows_nota10_anio5>0)) and (($totalRows_nota11_anio2==0)and($totalRows_nota11_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 11 
 ?>
@@ -3609,25 +3615,25 @@ if ($totalRows_nota12_anio5>0){ // NOTA 12 DE ANIO 5
 if (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0)){ // NOTA 12 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio2>0)or($totalRows_nota11_anio5>0)) and (($totalRows_nota12_anio2==0)and($totalRows_nota12_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 12 
 ?>
@@ -3690,25 +3696,25 @@ if ($totalRows_nota13_anio5>0){ // NOTA 13 DE ANIO 5
 if (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0)){ // NOTA 13 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio2>0)or($totalRows_nota12_anio5>0)) and (($totalRows_nota13_anio2==0)and($totalRows_nota13_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 13 
 ?>
@@ -3769,41 +3775,48 @@ if ($totalRows_nota14_anio5>0){ // NOTA 14 DE ANIO 5
 if (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0)){ // NOTA 14 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio2>0)or($totalRows_nota13_anio5>0)) and (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 14 
 ?>
-	<div class="mate">
+	<div class="mate" style="text-align:center;">
+	*
 	</div>
-	<div class="no">
+	<div class="no" style="text-align:center;">
+	*
 	</div>
-	<div class="letras">
+	<div class="letras" style="text-align:center;">
+	*
 	</div>
-	<div class="te">
+	<div class="te" style="text-align:center;">
+	*
 	</div>
-	<div class="fmes">
+	<div class="fmes" style="text-align:center;">
+	*
 	</div>
-	<div class="fanio">
+	<div class="fanio" style="text-align:center;">
+	*
 	</div>
-	<div class="no_plantel">
+	<div class="no_plantel" style="text-align:center;">
+	*
 	</div>
 
 </div>
@@ -4374,29 +4387,29 @@ if ($totalRows_nota9_anio6>0){ // NOTA 9 DE ANIO 6
 <?php } // FIN NOTA 9 ANIO 5
 ?>
 <?php 
-if (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0)){ // NOTA 9 ESTA VACIA
+if (($totalRows_nota9_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 9 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota8_anio3>0)or($totalRows_nota8_anio6>0)) and (($totalRows_nota9_anio3==0)and($totalRows_nota9_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 9 
 ?>
@@ -4457,28 +4470,28 @@ if ($totalRows_nota10_anio6>0){ // NOTA 10 DE ANIO 6
 <?php } // FIN NOTA 10 ANIO 6
 ?>
 <?php 
-if (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0)){ // NOTA 10 ESTA VACIA
+if (($totalRows_nota10_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 10 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+   *
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota9_anio3>0)or($totalRows_nota9_anio6>0)) and (($totalRows_nota10_anio3==0)and($totalRows_nota10_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 10 
 ?>
@@ -4537,29 +4550,29 @@ if ($totalRows_nota11_anio6>0){ // NOTA 11 DE ANIO 6
 <?php } // FIN NOTA 11 ANIO 6
 ?>
 <?php 
-if (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0)){ // NOTA 11 ESTA VACIA
+if (($totalRows_nota11_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 11 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota10_anio3>0)or($totalRows_nota10_anio6>0)) and (($totalRows_nota11_anio3==0)and($totalRows_nota11_anio6==0))) { echo "*"; }?>
+	*
 
 	</div>
 <?php } // FIN NOTA 11 
@@ -4620,28 +4633,28 @@ if ($totalRows_nota12_anio6>0){ // NOTA 12 DE ANIO 6
 <?php } // FIN NOTA 12 ANIO 6
 ?>
 <?php 
-if (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0)){ // NOTA 12 ESTA VACIA
+if (($totalRows_nota12_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 12 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota11_anio3>0)or($totalRows_nota11_anio6>0)) and (($totalRows_nota12_anio3==0)and($totalRows_nota12_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 12 
 ?>
@@ -4701,29 +4714,29 @@ if ($totalRows_nota13_anio6>0){ // NOTA 13 DE ANIO 6
 ?>
 
 <?php 
-if (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0)){ // NOTA 13 ESTA VACIA
+if (($totalRows_nota13_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 13 ESTA VACIA
 ?>
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fmes" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota12_anio3>0)or($totalRows_nota12_anio6>0)) and (($totalRows_nota13_anio3==0)and($totalRows_nota13_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 <?php } // FIN NOTA 13 
 ?>
@@ -4781,189 +4794,434 @@ if ($totalRows_nota14_anio6>0){ // NOTA 14 DE ANIO 6
 <?php } // FIN NOTA 14 ANIO 6
 ?>
 <?php 
-if (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0)){ // NOTA 14 ESTA VACIA
+if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 14 ESTA VACIA
 ?>
+
 	<div class="mate" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="letras" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="te" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	*
 	</div>
-	<div class="fmes">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	<div class="fmes" style="text-align:center;">
+	*
 	</div>
 	<div class="fanio" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	*
 	</div>
 	<div class="no_plantel" style="text-align:center;">
-	<?php if((($totalRows_nota13_anio3>0)or($totalRows_nota13_anio6>0)) and (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0))) { echo "*"; }?>
+	*
+	</div>
+
+
+	<div class="mate" style="text-align:center;">
+	*
+	</div>
+	<div class="no" style="text-align:center;">
+	*
+	</div>
+	<div class="letras" style="text-align:center;">
+	*
+	</div>
+	<div class="te" style="text-align:center;">
+	*
+	</div>
+	<div class="fmes" style="text-align:center;">
+	*
+	</div>
+	<div class="fanio" style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel" style="text-align:center;">
+	*
 	</div>
 <?php } // FIN NOTA 14 
 ?>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
+
 <?php if(($totalRows_nota1_anio3==0)and($totalRows_nota1_anio6==0)){ ?>
 
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
-	</div>
-	<div class="mate">
-	</div>
-	<div class="no">
-	</div>
-	<div class="letras">
-	</div>
-	<div class="te">
-	</div>
-	<div class="fmes">
-	</div>
-	<div class="fanio">
-	</div>
-	<div class="no_plantel">
+<div class="container_titulos">
+
+<div class="container_cuadro_left">
+	<div class="cuadro_left">
+	<b>A&ntilde;o o Grado: 
+	</div>
+	<div class="cuadro_left" style="text-align:center;">
+	<b>Asignaturas</b>
 	</div>
 
+</div>
+
+<div class="container_cuadro_medio_grande">
+	<div class="cuadro_medio_grande">
+	<b>Calificaci&oacute;n</b>
+	</div>
+	<div class="cuadro_medio_grande">
+		<div class="enno">
+		<b>En No.</b>
+		</div>
+		<div class="enletras">
+		<b>En letras</b>
+		</div>
+
+	</div>
+</div>
+
+<div class="t-e">
+<b>T-E</b>
+</div>
+
+<div class="container_fecha">
+	<div class="fecha">
+	<b>Fecha</b>
+	</div>
+	<div class="fecha">
+		<div class="mes">
+		<b>Mes</b>
+		</div>
+		<div class="anio">
+		<b>A&ntilde;o</b>
+		</div>
+	</div>
+
+</div>
+
+<div class="container_plantel">
+	<div class="plantel">
+	<b>Plantel</b>
+	</div>
+	<div class="plantel">
+	<b>No.</b>
+	</div>
+</div>
+
+<div id="container_asignaturas">
+   <div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+	<div class="mate"  style="text-align:center;">
+	*
+	</div>
+	<div class="no"  style="text-align:center;">
+	*
+	</div>
+	<div class="letras"  style="text-align:center;">
+	*
+	</div>
+	<div class="te"  style="text-align:center;">
+	*
+	</div>
+	<div class="fmes"  style="text-align:center;">
+	*
+	</div>
+	<div class="fanio"  style="text-align:center;">
+	*
+	</div>
+	<div class="no_plantel"  style="text-align:center;">
+	*
+	</div>
+</div>
+</div>
 <?php }?>
+
 <?php if(($totalRows_nota1_anio3>0)or($totalRows_nota1_anio6>0)){?>
 </div>
 <?php } ?>
@@ -4971,6 +5229,7 @@ if (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0)){ // NOTA 14 EST
 </div>
 </div>
 </div>
+
 
 <div id="central_sellos">
 	<div class="titulo">
@@ -5177,21 +5436,3 @@ if (($totalRows_nota14_anio3==0)and($totalRows_nota14_anio6==0)){ // NOTA 14 EST
 </body>
 </center>
 </html>
-<?php
-
-mysql_free_result($usuario);
-mysql_free_result($supervisor);
-mysql_free_result($planestudio);
-mysql_free_result($institucion);
-
-mysql_free_result($alumno);
-mysql_free_result($plantelcurso1);
-mysql_free_result($plantelcurso2);
-mysql_free_result($plantelcurso3);
-mysql_free_result($plantelcurso4);
-mysql_free_result($plantelcurso5);
-
-
-
-
-?>

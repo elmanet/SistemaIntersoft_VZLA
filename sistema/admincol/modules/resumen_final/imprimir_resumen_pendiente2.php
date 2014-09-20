@@ -219,7 +219,10 @@ if($_POST['hoja']==4){
 $hojaini=40;
 $hojafin=52;
 }
-
+if($_POST['hoja']==5){
+$hojaini=53;
+$hojafin=65;
+}
 // VER NOTAS
 
 
@@ -372,6 +375,9 @@ $hoja=3;
 }
 if($_POST['hoja']==4){
 $hoja=4;
+}
+if($_POST['hoja']==5){
+$hoja=5;
 }
 
 

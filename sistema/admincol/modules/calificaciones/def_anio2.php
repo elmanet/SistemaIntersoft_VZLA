@@ -177,7 +177,7 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s  AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
+$query_mate1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s  AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "int"));
 $mate1 = mysql_query($query_mate1, $sistemacol) or die(mysql_error());
 $row_mate1 = mysql_fetch_assoc($mate1);
 $totalRows_mate1 = mysql_num_rows($mate1);
@@ -185,7 +185,7 @@ $totalRows_mate1 = mysql_num_rows($mate1);
 
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
+$query_mate1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
 $mate1 = mysql_query($query_mate1, $sistemacol) or die(mysql_error());
 $row_mate1 = mysql_fetch_assoc($mate1);
 $totalRows_mate1 = mysql_num_rows($mate1);
@@ -193,14 +193,14 @@ $totalRows_mate1 = mysql_num_rows($mate1);
 
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1 = sprintf("SELECT a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
+$query_mate1 = sprintf("SELECT a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
 $mate1 = mysql_query($query_mate1, $sistemacol) or die(mysql_error());
 $row_mate1 = mysql_fetch_assoc($mate1);
 $totalRows_mate1 = mysql_num_rows($mate1);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1 = sprintf("SELECT a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s  AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
+$query_mate1 = sprintf("SELECT a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, a.lugar_nacimiento, a.fecha_nacimiento, a.sexo, a.ef, a.indicador_nacionalidad, a.estado FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s  AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1, "text"));
 $mate1 = mysql_query($query_mate1, $sistemacol) or die(mysql_error());
 $row_mate1 = mysql_fetch_assoc($mate1);
 $totalRows_mate1 = mysql_num_rows($mate1);
@@ -217,28 +217,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
+$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
 $mate1l1 = mysql_query($query_mate1l1, $sistemacol) or die(mysql_error());
 $row_mate1l1 = mysql_fetch_assoc($mate1l1);
 $totalRows_mate1l1 = mysql_num_rows($mate1l1);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido,  c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
+$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido,  c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
 $mate1l1 = mysql_query($query_mate1l1, $sistemacol) or die(mysql_error());
 $row_mate1l1 = mysql_fetch_assoc($mate1l1);
 $totalRows_mate1l1 = mysql_num_rows($mate1l1);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido,  c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
+$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido,  c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
 $mate1l1 = mysql_query($query_mate1l1, $sistemacol) or die(mysql_error());
 $row_mate1l1 = mysql_fetch_assoc($mate1l1);
 $totalRows_mate1l1 = mysql_num_rows($mate1l1);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido,  c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s  AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
+$query_mate1l1 = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido,  c.def, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s  AND c.lapso=1 AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1l1, "text"));
 $mate1l1 = mysql_query($query_mate1l1, $sistemacol) or die(mysql_error());
 $row_mate1l1 = mysql_fetch_assoc($mate1l1);
 $totalRows_mate1l1 = mysql_num_rows($mate1l1);
@@ -254,7 +254,7 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
+$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
 $mate1def = mysql_query($query_mate1def, $sistemacol) or die(mysql_error());
 $row_mate1def = mysql_fetch_assoc($mate1def);
 $totalRows_mate1def = mysql_num_rows($mate1def);
@@ -262,21 +262,21 @@ $totalRows_mate1def = mysql_num_rows($mate1def);
 
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
+$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
 $mate1def = mysql_query($query_mate1def, $sistemacol) or die(mysql_error());
 $row_mate1def = mysql_fetch_assoc($mate1def);
 $totalRows_mate1def = mysql_num_rows($mate1def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id     AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
+$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id     AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
 $mate1def = mysql_query($query_mate1def, $sistemacol) or die(mysql_error());
 $row_mate1def = mysql_fetch_assoc($mate1def);
 $totalRows_mate1def = mysql_num_rows($mate1def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
+$query_mate1def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=1 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate1def, "text"));
 $mate1def = mysql_query($query_mate1def, $sistemacol) or die(mysql_error());
 $row_mate1def = mysql_fetch_assoc($mate1def);
 $totalRows_mate1def = mysql_num_rows($mate1def);
@@ -293,7 +293,7 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
+$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
 $mate2def = mysql_query($query_mate2def, $sistemacol) or die(mysql_error());
 $row_mate2def = mysql_fetch_assoc($mate2def);
 $totalRows_mate2def = mysql_num_rows($mate2def);
@@ -301,21 +301,21 @@ $totalRows_mate2def = mysql_num_rows($mate2def);
 
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
+$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
 $mate2def = mysql_query($query_mate2def, $sistemacol) or die(mysql_error());
 $row_mate2def = mysql_fetch_assoc($mate2def);
 $totalRows_mate2def = mysql_num_rows($mate2def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
+$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
 $mate2def = mysql_query($query_mate2def, $sistemacol) or die(mysql_error());
 $row_mate2def = mysql_fetch_assoc($mate2def);
 $totalRows_mate2def = mysql_num_rows($mate2def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
+$query_mate2def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=2 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate2def, "text"));
 $mate2def = mysql_query($query_mate2def, $sistemacol) or die(mysql_error());
 $row_mate2def = mysql_fetch_assoc($mate2def);
 $totalRows_mate2def = mysql_num_rows($mate2def);
@@ -332,28 +332,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
+$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
 $mate3def = mysql_query($query_mate3def, $sistemacol) or die(mysql_error());
 $row_mate3def = mysql_fetch_assoc($mate3def);
 $totalRows_mate3def = mysql_num_rows($mate3def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
+$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
 $mate3def = mysql_query($query_mate3def, $sistemacol) or die(mysql_error());
 $row_mate3def = mysql_fetch_assoc($mate3def);
 $totalRows_mate3def = mysql_num_rows($mate3def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
+$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
 $mate3def = mysql_query($query_mate3def, $sistemacol) or die(mysql_error());
 $row_mate3def = mysql_fetch_assoc($mate3def);
 $totalRows_mate3def = mysql_num_rows($mate3def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
+$query_mate3def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=3 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate3def, "text"));
 $mate3def = mysql_query($query_mate3def, $sistemacol) or die(mysql_error());
 $row_mate3def = mysql_fetch_assoc($mate3def);
 $totalRows_mate3def = mysql_num_rows($mate3def);
@@ -369,7 +369,7 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
+$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
 $mate4def = mysql_query($query_mate4def, $sistemacol) or die(mysql_error());
 $row_mate4def = mysql_fetch_assoc($mate4def);
 $totalRows_mate4def = mysql_num_rows($mate4def);
@@ -377,21 +377,21 @@ $totalRows_mate4def = mysql_num_rows($mate4def);
 
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
+$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
 $mate4def = mysql_query($query_mate4def, $sistemacol) or die(mysql_error());
 $row_mate4def = mysql_fetch_assoc($mate4def);
 $totalRows_mate4def = mysql_num_rows($mate4def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
+$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
 $mate4def = mysql_query($query_mate4def, $sistemacol) or die(mysql_error());
 $row_mate4def = mysql_fetch_assoc($mate4def);
 $totalRows_mate4def = mysql_num_rows($mate4def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
+$query_mate4def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=4 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate4def, "text"));
 $mate4def = mysql_query($query_mate4def, $sistemacol) or die(mysql_error());
 $row_mate4def = mysql_fetch_assoc($mate4def);
 $totalRows_mate4def = mysql_num_rows($mate4def);
@@ -407,28 +407,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
+$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
 $mate5def = mysql_query($query_mate5def, $sistemacol) or die(mysql_error());
 $row_mate5def = mysql_fetch_assoc($mate5def);
 $totalRows_mate5def = mysql_num_rows($mate5def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
+$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
 $mate5def = mysql_query($query_mate5def, $sistemacol) or die(mysql_error());
 $row_mate5def = mysql_fetch_assoc($mate5def);
 $totalRows_mate5def = mysql_num_rows($mate5def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
+$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
 $mate5def = mysql_query($query_mate5def, $sistemacol) or die(mysql_error());
 $row_mate5def = mysql_fetch_assoc($mate5def);
 $totalRows_mate5def = mysql_num_rows($mate5def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
+$query_mate5def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=5 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate5def, "text"));
 $mate5def = mysql_query($query_mate5def, $sistemacol) or die(mysql_error());
 $row_mate5def = mysql_fetch_assoc($mate5def);
 $totalRows_mate5def = mysql_num_rows($mate5def);
@@ -446,28 +446,28 @@ $confi=$row_confip['codfor'];
 if ($confi=="bol01"){
 
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
+$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
 $mate6def = mysql_query($query_mate6def, $sistemacol) or die(mysql_error());
 $row_mate6def = mysql_fetch_assoc($mate6def);
 $totalRows_mate6def = mysql_num_rows($mate6def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
+$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
 $mate6def = mysql_query($query_mate6def, $sistemacol) or die(mysql_error());
 $row_mate6def = mysql_fetch_assoc($mate6def);
 $totalRows_mate6def = mysql_num_rows($mate6def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
+$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
 $mate6def = mysql_query($query_mate6def, $sistemacol) or die(mysql_error());
 $row_mate6def = mysql_fetch_assoc($mate6def);
 $totalRows_mate6def = mysql_num_rows($mate6def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
+$query_mate6def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=6 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate6def, "text"));
 $mate6def = mysql_query($query_mate6def, $sistemacol) or die(mysql_error());
 $row_mate6def = mysql_fetch_assoc($mate6def);
 $totalRows_mate6def = mysql_num_rows($mate6def);
@@ -484,28 +484,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
+$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
 $mate7def = mysql_query($query_mate7def, $sistemacol) or die(mysql_error());
 $row_mate7def = mysql_fetch_assoc($mate7def);
 $totalRows_mate7def = mysql_num_rows($mate7def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
+$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
 $mate7def = mysql_query($query_mate7def, $sistemacol) or die(mysql_error());
 $row_mate7def = mysql_fetch_assoc($mate7def);
 $totalRows_mate7def = mysql_num_rows($mate7def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
+$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
 $mate7def = mysql_query($query_mate7def, $sistemacol) or die(mysql_error());
 $row_mate7def = mysql_fetch_assoc($mate7def);
 $totalRows_mate7def = mysql_num_rows($mate7def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
+$query_mate7def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=7 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate7def, "text"));
 $mate7def = mysql_query($query_mate7def, $sistemacol) or die(mysql_error());
 $row_mate7def = mysql_fetch_assoc($mate7def);
 $totalRows_mate7def = mysql_num_rows($mate7def);
@@ -522,14 +522,14 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
+$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
 $mate8def = mysql_query($query_mate8def, $sistemacol) or die(mysql_error());
 $row_mate8def = mysql_fetch_assoc($mate8def);
 $totalRows_mate8def = mysql_num_rows($mate8def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
+$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
 $mate8def = mysql_query($query_mate8def, $sistemacol) or die(mysql_error());
 $row_mate8def = mysql_fetch_assoc($mate8def);
 $totalRows_mate8def = mysql_num_rows($mate8def);
@@ -537,14 +537,14 @@ $totalRows_mate8def = mysql_num_rows($mate8def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
+$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
 $mate8def = mysql_query($query_mate8def, $sistemacol) or die(mysql_error());
 $row_mate8def = mysql_fetch_assoc($mate8def);
 $totalRows_mate8def = mysql_num_rows($mate8def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
+$query_mate8def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=8 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate8def, "text"));
 $mate8def = mysql_query($query_mate8def, $sistemacol) or die(mysql_error());
 $row_mate8def = mysql_fetch_assoc($mate8def);
 $totalRows_mate8def = mysql_num_rows($mate8def);
@@ -561,28 +561,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
+$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id    AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
 $mate9def = mysql_query($query_mate9def, $sistemacol) or die(mysql_error());
 $row_mate9def = mysql_fetch_assoc($mate9def);
 $totalRows_mate9def = mysql_num_rows($mate9def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
+$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
 $mate9def = mysql_query($query_mate9def, $sistemacol) or die(mysql_error());
 $row_mate9def = mysql_fetch_assoc($mate9def);
 $totalRows_mate9def = mysql_num_rows($mate9def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
+$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
 $mate9def = mysql_query($query_mate9def, $sistemacol) or die(mysql_error());
 $row_mate9def = mysql_fetch_assoc($mate9def);
 $totalRows_mate9def = mysql_num_rows($mate9def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
+$query_mate9def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=9 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate9def, "text"));
 $mate9def = mysql_query($query_mate9def, $sistemacol) or die(mysql_error());
 $row_mate9def = mysql_fetch_assoc($mate9def);
 $totalRows_mate9def = mysql_num_rows($mate9def);
@@ -599,28 +599,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
+$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
 $mate10def = mysql_query($query_mate10def, $sistemacol) or die(mysql_error());
 $row_mate10def = mysql_fetch_assoc($mate10def);
 $totalRows_mate10def = mysql_num_rows($mate10def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
+$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
 $mate10def = mysql_query($query_mate10def, $sistemacol) or die(mysql_error());
 $row_mate10def = mysql_fetch_assoc($mate10def);
 $totalRows_mate10def = mysql_num_rows($mate10def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
+$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
 $mate10def = mysql_query($query_mate10def, $sistemacol) or die(mysql_error());
 $row_mate10def = mysql_fetch_assoc($mate10def);
 $totalRows_mate10def = mysql_num_rows($mate10def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
+$query_mate10def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=10 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate10def, "text"));
 $mate10def = mysql_query($query_mate10def, $sistemacol) or die(mysql_error());
 $row_mate10def = mysql_fetch_assoc($mate10def);
 $totalRows_mate10def = mysql_num_rows($mate10def);
@@ -637,28 +637,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
+$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
 $mate11def = mysql_query($query_mate11def, $sistemacol) or die(mysql_error());
 $row_mate11def = mysql_fetch_assoc($mate11def);
 $totalRows_mate11def = mysql_num_rows($mate11def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
+$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
 $mate11def = mysql_query($query_mate11def, $sistemacol) or die(mysql_error());
 $row_mate11def = mysql_fetch_assoc($mate11def);
 $totalRows_mate11def = mysql_num_rows($mate11def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
+$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
 $mate11def = mysql_query($query_mate11def, $sistemacol) or die(mysql_error());
 $row_mate11def = mysql_fetch_assoc($mate11def);
 $totalRows_mate11def = mysql_num_rows($mate11def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
+$query_mate11def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=11 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate11def, "text"));
 $mate11def = mysql_query($query_mate11def, $sistemacol) or die(mysql_error());
 $row_mate11def = mysql_fetch_assoc($mate11def);
 $totalRows_mate11def = mysql_num_rows($mate11def);
@@ -675,28 +675,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
+$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
 $mate12def = mysql_query($query_mate12def, $sistemacol) or die(mysql_error());
 $row_mate12def = mysql_fetch_assoc($mate12def);
 $totalRows_mate12def = mysql_num_rows($mate12def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
+$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
 $mate12def = mysql_query($query_mate12def, $sistemacol) or die(mysql_error());
 $row_mate12def = mysql_fetch_assoc($mate12def);
 $totalRows_mate12def = mysql_num_rows($mate12def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
+$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
 $mate12def = mysql_query($query_mate12def, $sistemacol) or die(mysql_error());
 $row_mate12def = mysql_fetch_assoc($mate12def);
 $totalRows_mate12def = mysql_num_rows($mate12def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
+$query_mate12def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=12 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate12def, "text"));
 $mate12def = mysql_query($query_mate12def, $sistemacol) or die(mysql_error());
 $row_mate12def = mysql_fetch_assoc($mate12def);
 $totalRows_mate12def = mysql_num_rows($mate12def);
@@ -713,28 +713,28 @@ $confi=$row_confip['codfor'];
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
+$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
 $mate13def = mysql_query($query_mate13def, $sistemacol) or die(mysql_error());
 $row_mate13def = mysql_fetch_assoc($mate13def);
 $totalRows_mate13def = mysql_num_rows($mate13def);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
+$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
 $mate13def = mysql_query($query_mate13def, $sistemacol) or die(mysql_error());
 $row_mate13def = mysql_fetch_assoc($mate13def);
 $totalRows_mate13def = mysql_num_rows($mate13def);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
+$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
 $mate13def = mysql_query($query_mate13def, $sistemacol) or die(mysql_error());
 $row_mate13def = mysql_fetch_assoc($mate13def);
 $totalRows_mate13def = mysql_num_rows($mate13def);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
+$query_mate13def = sprintf("SELECT  a.alumno_id, a.cedula, a.nombre, a.apellido, a.cedula, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),0) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id   AND b.curso_id = %s AND d.orden_asignatura=13 GROUP BY a.alumno_id  ORDER BY a.cedula ASC", GetSQLValueString($colname_mate13def, "text"));
 $mate13def = mysql_query($query_mate13def, $sistemacol) or die(mysql_error());
 $row_mate13def = mysql_fetch_assoc($mate13def);
 $totalRows_mate13def = mysql_num_rows($mate13def);
@@ -790,28 +790,28 @@ if (isset($_POST['curso_id'])) {
 
 if ($confi=="bol01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s  GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"));
+$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s  GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"));
 $mate15 = mysql_query($query_mate15, $sistemacol) or die(mysql_error());
 $row_mate15 = mysql_fetch_assoc($mate15);
 $totalRows_mate15 = mysql_num_rows($mate15);
 }
 if ($confi=="bol02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"), GetSQLValueString($lap_mate15, "int"));
+$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_bol02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"), GetSQLValueString($lap_mate15, "int"));
 $mate15 = mysql_query($query_mate15, $sistemacol) or die(mysql_error());
 $row_mate15 = mysql_fetch_assoc($mate15);
 $totalRows_mate15 = mysql_num_rows($mate15);
 }
 if ($confi=="nor01"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"), GetSQLValueString($lap_mate15, "int"));
+$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor01 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"), GetSQLValueString($lap_mate15, "int"));
 $mate15 = mysql_query($query_mate15, $sistemacol) or die(mysql_error());
 $row_mate15 = mysql_fetch_assoc($mate15);
 $totalRows_mate15 = mysql_num_rows($mate15);
 }
 if ($confi=="nor02"){
 mysql_select_db($database_sistemacol, $sistemacol);
-$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura='' AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"), GetSQLValueString($lap_mate15, "int"));
+$query_mate15 = sprintf("SELECT a.nombre, a.apellido, d.tipo_asignatura, e.iniciales as mate, e.nombre as nombre_mate, ROUND(AVG(c.def),2) as def FROM jos_alumno_info a, jos_alumno_curso b, jos_formato_evaluacion_nor02 c, jos_asignatura d, jos_asignatura_nombre e WHERE a.alumno_id=c.alumno_id AND a.alumno_id=b.alumno_id AND c.asignatura_id=d.id AND d.tipo_asignatura IS NULL AND d.asignatura_nombre_id=e.id  AND b.curso_id = %s GROUP BY a.alumno_id ORDER BY a.cedula ASC", GetSQLValueString($colname_mate15, "text"), GetSQLValueString($lap_mate15, "int"));
 $mate15 = mysql_query($query_mate15, $sistemacol) or die(mysql_error());
 $row_mate15 = mysql_fetch_assoc($mate15);
 $totalRows_mate15 = mysql_num_rows($mate15);
@@ -895,7 +895,7 @@ elemento.checked = chkbox.checked
 <body>
 <center>
 <?php if($totalRows_mate1>0){?>
-<table width="650"><tr><td>
+<table width="740"><tr><td>
  	           <td height="100"  width="120" align="right" valign="middle"><img src="../../images/<?php echo $row_colegio['logocol']; ?>" width="100" height="100" align="absmiddle"></td>
 
             	<td align="center" valign="middle"><div align="center">
@@ -920,7 +920,7 @@ elemento.checked = chkbox.checked
 
 
 <h3>Definitivas de A&ntilde;o Estudiantes de <?php echo $row_asignatura['nombre']." ".$row_asignatura['descripcion']; ?></h3>
-<table width="650"><tr>
+<table width="740"><tr>
 
 
 <?php // MATERIA 1
@@ -1306,22 +1306,9 @@ ET
 mysql_free_result($asignatura);
 mysql_free_result($confip);
 mysql_free_result($mate1);
-mysql_free_result($mate2);
-mysql_free_result($mate3);
-mysql_free_result($mate4);
-mysql_free_result($mate5);
-mysql_free_result($mate6);
-mysql_free_result($mate7);
-mysql_free_result($mate8);
-mysql_free_result($mate9);
-mysql_free_result($mate10);
-mysql_free_result($mate11);
-mysql_free_result($mate12);
-mysql_free_result($mate13);
-mysql_free_result($mate14);
+
 mysql_free_result($mate15);
 
 mysql_free_result($colegio);
-mysql_free_result($resumen);
 
 ?>
