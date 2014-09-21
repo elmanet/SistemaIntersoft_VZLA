@@ -1577,7 +1577,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 	<b>Lugar y Fecha de Expedici&oacute;n:</b>
 	</div>
 	<div class="fecha">
-	<span style="font-size:6pt;" ><?php echo $row_institucion['ciudad'];?>, <?php echo date(d);?> DE 
+	<span style="font-size:5.7pt;" ><?php echo $row_institucion['ciudad'];?>, <?php echo date(d);?> DE 
 	<?php 
 	$mes=date("M");
 	if ($mes=="Jan") $mes="ENERO";
