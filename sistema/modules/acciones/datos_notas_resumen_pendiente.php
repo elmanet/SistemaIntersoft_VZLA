@@ -353,7 +353,7 @@ EPT4
 <span class="texto_pequeno_gris"><?php echo $row_mate1['apellido'].", ".$row_mate1['nombre']; ?></span>
 </td>
 <td  class="ancho_td_no3"style="border-right:1px solid; border-bottom:1px solid;" >
-<select name="<?php echo 'no_alumno'.$i; ?>"><option value="<?php echo $row_mate1['no_alumno']; ?>">H-A</option><option value="13">H-1</option><option value="25">H-2</option><option value="38">H-3</option></select>
+<select name="<?php echo 'no_alumno'.$i; ?>"><option value="<?php echo $row_mate1['no_alumno']; ?>">H-A</option><option value="13">H-1</option><option value="25">H-2</option><option value="38">H-3</option><option value="51">H-4</option><option value="64">H-5</option></select>
 </td>
 <td  class="ancho_td_no3"style="border-right:1px solid; border-bottom:1px solid;" >
 <input type="text" size="2" class="texto_pequeno_gris" name="<?php echo 'm1'.$i; ?>" value="<?php echo $row_mate1['m1']; ?>" />

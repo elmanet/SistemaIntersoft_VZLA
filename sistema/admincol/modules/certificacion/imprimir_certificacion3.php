@@ -1553,28 +1553,28 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 	<b>CERTIFICACION DE CALIFICACIONES</b>
 	</div>
 	<div class="coddea">
-	<b>Codigo del Formato: RR-DEA-03-03</b>
+	Codigo del Formato: RR-DEA-03-03
 	</div>
 	<div class="titulo1">
-	<b>I. Plan de Estudio:</b>
+	I. Plan de Estudio:
 	</div>
 	<div class="plan">
 	 <?php echo $row_planestudio['plan_estudio']; ?> 
 	</div>
 	<div class="titulo2">
-	<b>COD:</b>
+	COD:
 	</div>
 	<div class="codplan">
 	<?php echo $row_planestudio['cod']; ?>
 	</div>
 	<div class="titulo1">
-	<b>Menci&oacute;n:</b>
+	Menci&oacute;n:
 	</div>
 	<div class="mencion">
 	<?php if ($row_planestudio['mencion']==NULL) { echo "************";} else { echo $row_planestudio['mencion'];} ?>
 	</div>
 	<div class="fecha_titulo">
-	<b>Lugar y Fecha de Expedici&oacute;n:</b>
+	Lugar y Fecha de Expedici&oacute;n:
 	</div>
 	<div class="fecha">
 	<span style="font-size:5.7pt;" ><?php echo $row_institucion['ciudad'];?>, <?php echo date(d);?> DE 
@@ -1602,54 +1602,54 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 </div>
 <div id="info_plantel_estudiante">
 	<div class="titulo">
-	<b>II. Datos del Plantel o Z.E. que emite la Certificaci&oacute;n:</b>
+	II. Datos del Plantel o Z.E. que emite la Certificaci&oacute;n:
 	</div>
 	<div class="titulo_info" style="text-align:left;">
-	<b>C&oacute;d. Plantel:</b>
+	C&oacute;d. Plantel:
 	</div>
 	<div class="cod_plantel">
 	<?php echo $row_institucion['cod_plantel'];?>
 	</div>
 	<div class="titulo_info">
-	<b>Nombre:</b> 
+	Nombre: 
 	</div>
 	<div class="nombre_plantel" >
 	<?php echo $row_institucion['nombre_plantel'];?>
 	</div>
 	<div class="titulo_info">
-	<b>Dtto.Esc.:</b>
+	Dtto.Esc.:
 	</div>
 	<div class="dtto">
 	 <?php echo $row_institucion['dtto_esc'];?> 
 	</div>
 
 	<div class="titulo_info" style="text-align:left;">
-	<b>Direcci&oacute;n:</b>
+	Direcci&oacute;n:
 	</div>
 	<div class="direccion" style="font-size:9px;">
 	 <?php echo $row_institucion['direccion'];?>
 	</div>
 	<div class="titulo_info" >
-	 <b>Tel&eacute;fono:</b>
+	 Tel&eacute;fono:
 	</div>
 	<div class="telefono">
  	<?php echo $row_institucion['telefono'];?>
 	</div>
 
 	<div class="titulo_info" style="text-align:left;">
-	<b>Municipio:</b>
+	Municipio:
 	</div>
 	<div class="municipio">
  	 <?php echo $row_institucion['municipio'];?>
 	</div>
 	<div class="titulo_info" >
-	<b>Ent. Federal:</b> 
+	Ent. Federal: 
 	</div>
 	<div class="varios">
  	 <?php echo $row_institucion['ent_federal'];?>
 	</div>
 	<div class="titulo_info" style="width:3cm;" >
-	<b>Zona Educativa:</b>
+	Zona Educativa:
 	</div>
 	<div class="varios">
  	 <?php echo $row_institucion['zona_educativa'];?>
@@ -1657,16 +1657,16 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 
 
 	<div class="titulo">
-	<b>III. Datos de Identificaci&oacute;n del (la) Estudiante:</b>
+	III. Datos de Identificaci&oacute;n del (la) Estudiante:
 	</div>
 	<div class="titulo_info" style="text-align:left;" >
-	<b>C&eacute;d. Identidad:</b>
+	C&eacute;d. Identidad:
 	</div>
 	<div class="cedula">
  	<?php echo $row_alumno['indicador_nacionalidad']."-".$row_alumno['cedula'];?>
 	</div>
 	<div class="titulo_info" style="width:3cm;" >
-	<b>Fecha de Nacimiento:</b>
+	Fecha de Nacimiento:
 	</div>
 	<div class="varios">
 	<?php
@@ -1679,26 +1679,26 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 	</div>
 
 	<div class="titulo_info" style="text-align:left;" >
-	<b>Apellidos:</b>
+	Apellidos:
 	</div>
 	<div class="nombres">
  	<?php echo $row_alumno['apellido_alumno'];?>
 	</div>
 	<div class="titulo_info" style="width:3cm;" >
-	<b>Nombres:</b>
+	Nombres:
 	</div>
 	<div class="nombres">
  	<?php echo $row_alumno['nombre_alumno'];?> 
 	</div>
 
 	<div class="titulo_info" style="text-align:left; width:3cm;"  >
-	<b>Lugar de Nacimiento:</b>
+	Lugar de Nacimiento:
 	</div>
 	<div class="entidad">
  	<?php echo $row_alumno['lugar_nacimiento'];?>
 	</div>
 	<div class="titulo_info" style="width:3cm;" >
-	 <b>Ent. Federal o Pa&iacute;s:</b>
+	 Ent. Federal o Pa&iacute;s:
 	</div>
 	<div class="entidad">
  	 <?php echo $row_alumno['ent_federal_pais'];?>
@@ -1708,38 +1708,38 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 </div>
 <div id="plantel_curso1">
 	<div class="titulo"  style="border-bottom:1px solid;">
-		<b>IV. Planteles donde Curs&oacute; estos Estudios:</b>
+		IV. Planteles donde Curs&oacute; estos Estudios:
 	</div>
 	<div class="cuadrito" style="border-top:1px solid;">
-		<b>No.</b>
+		No.
 	</div>
 	<div class="cuadro_grande" style="font-size:9pt; border-top:1px solid;">
-		<b>Nombre del Plantel</b>
+		Nombre del Plantel
 	</div>
 	<div class="cuadro_mediano" style="font-size:9pt; border-top:1px solid;">
-		<b>Localidad</b>
+		Localidad
 	</div>
 	<div class="cuadrito" style="border-top:1px solid; border-right:1px solid;">
-		<b>E.F.</b>
+		E.F.
 	</div>
 </div>
 
 <div id="plantel_curso">
 	<div class="cuadrito">
-		<b>No.</b>
+		No.
 	</div>
 	<div class="cuadro_grande" style="font-size:9pt;" >
-		<b>Nombre del Plantel</b>
+		Nombre del Plantel
 	</div>
 	<div class="cuadro_mediano2" style="font-size:9pt;">
-		<b>Localidad</b>
+		Localidad
 	</div>
 	<div class="cuadrito" >
-		<b>E.F.</b>
+		E.F.
 	</div>
 
 <div class="cuadrito">
-<b>3</b>
+3
 </div>
 <div class="cuadro_grande" >
 <?php if($totalRows_plantelcurso3>0){echo $row_plantelcurso3['nombre_plantel'];}else{ echo "*";} ?>
@@ -1752,7 +1752,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 </div>
 
 <div class="cuadrito">
-<b>1</b>
+1
 </div>
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso1>0){echo $row_plantelcurso1['nombre_plantel'];}else{ echo "*";} ?>
@@ -1765,7 +1765,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 </div>
 
 <div class="cuadrito">
-<b>4</b>
+4
 </div>
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso4>0){echo $row_plantelcurso4['nombre_plantel'];}else{ echo "*";} ?>
@@ -1778,7 +1778,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 </div>
 
 <div class="cuadrito">
-<b>2</b>
+2
 </div>
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso2>0){echo $row_plantelcurso2['nombre_plantel'];}else{ echo "*";} ?>
@@ -1791,7 +1791,7 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 </div>
 
 <div class="cuadrito">
-<b>5</b>
+5
 </div>
 <div class="cuadro_grande">
 <?php if($totalRows_plantelcurso5>0){echo $row_plantelcurso5['nombre_plantel']; }else{ echo "*";}?>
@@ -1808,48 +1808,48 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 
 <div id="central_notas">
 
-<b>V. Pensum de Estudio:</b>
+V. Pensum de Estudio:
 <div class="container_titulos">
 
 <div class="container_cuadro_left" style="border-top:1px solid;">
 	<div class="cuadro_left">
-	<b>A&ntilde;o o Grado: <?php if($totalRows_nota1_anio1>0) { echo $row_nota1_anio1['nombre_anio'];} if($totalRows_nota1_anio4>0) { echo $row_nota1_anio4['nombre_anio'];}  ?></b>
+	A&ntilde;o o Grado: <?php if($totalRows_nota1_anio1>0) { echo $row_nota1_anio1['nombre_anio'];} if($totalRows_nota1_anio4>0) { echo $row_nota1_anio4['nombre_anio'];}  ?>
 	</div>
 	<div class="cuadro_left" style="text-align:center;">
-	<b>Asignaturas</b>
+	Asignaturas
 	</div>
 
 </div>
 
 <div class="container_cuadro_medio_grande">
 	<div class="cuadro_medio_grande" style="border-top:1px solid;">
-	<b>Calificaci&oacute;n</b>
+	Calificaci&oacute;n
 	</div>
 	<div class="cuadro_medio_grande">
 		<div class="enno">
-		<b>En No.</b>
+		En No.
 		</div>
 		<div class="enletras">
-		<b>En letras</b>
+		En letras
 		</div>
 
 	</div>
 </div>
 
 <div class="t-e" style="border-top:1px solid;">
-<b>T-E</b>
+T-E
 </div>
 
 <div class="container_fecha">
 	<div class="fecha" style="border-top:1px solid;"> 
-	<b>Fecha</b>
+	Fecha
 	</div>
 	<div class="fecha">
 		<div class="mes">
-		<b>Mes</b>
+		Mes
 		</div>
 		<div class="anio">
-		<b>A&ntilde;o</b>
+		A&ntilde;o
 		</div>
 	</div>
 
@@ -1857,10 +1857,10 @@ Direcci&oacute;n General de Registro y Control Acad&eacute;mico
 
 <div class="container_plantel">
 	<div class="plantel" style="border-top:1px solid;">
-	<b>Plantel</b>
+	Plantel
 	</div>
 	<div class="plantel">
-	<b>No.</b>
+	No.
 	</div>
 </div>
 
@@ -2819,43 +2819,43 @@ if (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0)){ // NOTA 14 EST
 
 <div class="container_cuadro_left">
 	<div class="cuadro_left">
-	<b>A&ntilde;o o Grado: <?php if($totalRows_nota1_anio2>0) { echo $row_nota1_anio2['nombre_anio'];} if($totalRows_nota1_anio5>0) { echo $row_nota1_anio5['nombre_anio'];}  ?></b>
+	A&ntilde;o o Grado: <?php if($totalRows_nota1_anio2>0) { echo $row_nota1_anio2['nombre_anio'];} if($totalRows_nota1_anio5>0) { echo $row_nota1_anio5['nombre_anio'];}  ?>
 	</div>
 	<div class="cuadro_left" style="text-align:center;">
-	<b>Asignaturas</b>
+	Asignaturas
 	</div>
 
 </div>
 
 <div class="container_cuadro_medio_grande">
 	<div class="cuadro_medio_grande">
-	<b>Calificaci&oacute;n</b>
+	Calificaci&oacute;n
 	</div>
 	<div class="cuadro_medio_grande">
 		<div class="enno">
-		<b>En No.</b>
+		En No.
 		</div>
 		<div class="enletras">
-		<b>En letras</b>
+		En letras
 		</div>
 
 	</div>
 </div>
 
 <div class="t-e">
-<b>T-E</b>
+T-E
 </div>
 
 <div class="container_fecha">
 	<div class="fecha">
-	<b>Fecha</b>
+	Fecha
 	</div>
 	<div class="fecha">
 		<div class="mes">
-		<b>Mes</b>
+		Mes
 		</div>
 		<div class="anio">
-		<b>A&ntilde;o</b>
+		A&ntilde;o
 		</div>
 	</div>
 
@@ -2863,10 +2863,10 @@ if (($totalRows_nota14_anio1==0)and($totalRows_nota14_anio4==0)){ // NOTA 14 EST
 
 <div class="container_plantel">
 	<div class="plantel">
-	<b>Plantel</b>
+	Plantel
 	</div>
 	<div class="plantel">
-	<b>No.</b>
+	No.
 	</div>
 </div>
 
@@ -3829,10 +3829,10 @@ if (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0)){ // NOTA 14 EST
 
 <div class="container_cuadro_left">
 	<div class="cuadro_left">
-	<b>A&ntilde;o o Grado: <?php if($totalRows_nota1_anio3>0) { echo $row_nota1_anio3['nombre_anio'];} if($totalRows_nota1_anio6>0) { echo $row_nota1_anio5['nombre_anio'];}  ?></b>
+	A&ntilde;o o Grado: <?php if($totalRows_nota1_anio3>0) { echo $row_nota1_anio3['nombre_anio'];} if($totalRows_nota1_anio6>0) { echo $row_nota1_anio5['nombre_anio'];}  ?>
 	</div>
 	<div class="cuadro_left" style="text-align:center;">
-	<b>Asignaturas</b>
+	Asignaturas
 	</div>
 
 </div>
@@ -3840,33 +3840,33 @@ if (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0)){ // NOTA 14 EST
 
 <div class="container_cuadro_medio_grande">
 	<div class="cuadro_medio_grande">
-	<b>Calificaci&oacute;n</b>
+	Calificaci&oacute;n
 	</div>
 	<div class="cuadro_medio_grande">
 		<div class="enno">
-		<b>En No.</b>
+		En No.
 		</div>
 		<div class="enletras">
-		<b>En letras</b>
+		En letras
 		</div>
 
 	</div>
 </div>
 
 <div class="t-e">
-<b>T-E</b>
+T-E
 </div>
 
 <div class="container_fecha">
 	<div class="fecha">
-	<b>Fecha</b>
+	Fecha
 	</div>
 	<div class="fecha">
 		<div class="mes">
-		<b>Mes</b>
+		Mes
 		</div>
 		<div class="anio">
-		<b>A&ntilde;o</b>
+		A&ntilde;o
 		</div>
 	</div>
 
@@ -3874,10 +3874,10 @@ if (($totalRows_nota14_anio2==0)and($totalRows_nota14_anio5==0)){ // NOTA 14 EST
 
 <div class="container_plantel">
 	<div class="plantel">
-	<b>Plantel</b>
+	Plantel
 	</div>
 	<div class="plantel">
-	<b>No.</b>
+	No.
 	</div>
 </div>
 <?php }?>
@@ -4850,43 +4850,43 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 
 <div class="container_cuadro_left">
 	<div class="cuadro_left">
-	<b>A&ntilde;o o Grado: 
+	A&ntilde;o o Grado: 
 	</div>
 	<div class="cuadro_left" style="text-align:center;">
-	<b>Asignaturas</b>
+	Asignaturas
 	</div>
 
 </div>
 
 <div class="container_cuadro_medio_grande">
 	<div class="cuadro_medio_grande">
-	<b>Calificaci&oacute;n</b>
+	Calificaci&oacute;n
 	</div>
 	<div class="cuadro_medio_grande">
 		<div class="enno">
-		<b>En No.</b>
+		En No.
 		</div>
 		<div class="enletras">
-		<b>En letras</b>
+		En letras
 		</div>
 
 	</div>
 </div>
 
 <div class="t-e">
-<b>T-E</b>
+T-E
 </div>
 
 <div class="container_fecha">
 	<div class="fecha">
-	<b>Fecha</b>
+	Fecha
 	</div>
 	<div class="fecha">
 		<div class="mes">
-		<b>Mes</b>
+		Mes
 		</div>
 		<div class="anio">
-		<b>A&ntilde;o</b>
+		A&ntilde;o
 		</div>
 	</div>
 
@@ -4894,10 +4894,10 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 
 <div class="container_plantel">
 	<div class="plantel">
-	<b>Plantel</b>
+	Plantel
 	</div>
 	<div class="plantel">
-	<b>No.</b>
+	No.
 	</div>
 </div>
 
@@ -5233,24 +5233,24 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 
 <div id="central_sellos">
 	<div class="titulo">
-	<b>VI. DIRECTOR(A) PLANTEL</b>
+	VI. DIRECTOR(A) PLANTEL
 	</div>
 	<div class="director">
-	<b>Apellidos y Nombres del<br />
-	Director(a):</b>
+	Apellidos y Nombres del<br />
+	Director(a):
 	</div>
-	<bt />
+	<br />
 	<div class="director" style="text-align:center;">
 	<?php echo $row_institucion['apellido_director'].", ".$row_institucion['nombre_director'];?>
 	</div>
 	<div class="titulo">
-	<b>N&uacute;mero de C.I.:</b>
+	N&uacute;mero de C.I.:
 	</div>
 	<div class="titulo">
 	V-<?php echo $row_institucion['cedula_director'];?>
 	</div>
 	<div class="titulo">
-	<b>Firma:</b>
+	Firma:
 	</div>
 	<div class="director">
 
@@ -5265,16 +5265,16 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 	Para efectos de su validez a nivel estadal
 	</div>
 	<div class="cuadro_pequeno">
-	<b>VII. DIRECTOR(A) DE LA ZONA EDUCATIVA</b>
+	VII. DIRECTOR(A) DE LA ZONA EDUCATIVA
 	</div>
 	<div class="cuadro_datos">
-	<b>Apellidos y Nombres:</b>
+	Apellidos y Nombres:
 	</div>
 	<div class="cuadro_datos">
-	<b>N&uacute;mero de C.I.:</b>
+	N&uacute;mero de C.I.:
 	</div>
 	<div class="cuadro_datos">
-	<b>Firma:</b>
+	Firma:
 	</div>
 	<div class="sello">
 	<br />
@@ -5286,14 +5286,14 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 	Para efectos de su validez a nivel nacional e Internacional y cuando se trate de estudios libres o equivalentes sin escolaridad
 	</div>
 	<div class="cuadro_mediano">
-	<b>Timbre Fiscal:</b> Este Documento no tiene validez si no se le colocan en la parte posterior timbres fiscales por Bs.30% de la Unidad Tributaria
+	Timbre Fiscal: Este Documento no tiene validez si no se le colocan en la parte posterior timbres fiscales por Bs.30% de la Unidad Tributaria
 	</div>
 
 </div>
 
 <div id="ept">
 	<div class="titulo">
-	<b>VIII. Programas Aprobados de Educaci&oacute;n para el Trabajo: A&Ntilde;O/NOMBRE/HORAS ESTUDIANTE SEMANAL</b>
+	VIII. Programas Aprobados de Educaci&oacute;n para el Trabajo: A&Ntilde;O/NOMBRE/HORAS ESTUDIANTE SEMANAL
 	</div>
 
 	<div class="pequeno" style="border-top:1px solid;">
@@ -5401,7 +5401,7 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 </div>
 <div id="observaciones">
 	<div class="lineas">
-	<b>IX. Observaciones:</b>&nbsp;&nbsp;&nbsp;<?php echo $row_observa['observacion']; ?> 
+	IX. Observaciones:&nbsp;&nbsp;&nbsp;<?php echo $row_observa['observacion']; ?> 
 	</div>
 	<div class="lineas">
 	</div>
@@ -5412,7 +5412,7 @@ if (($totalRows_nota14_anio3==0) and ($row_planestudio['cod']==32011)){ // NOTA 
 	<div class="lineas">
 	</div>
 	<div class="info">
-	<b>LA CERTIFICACION NO TIENEN FECHA DE VENCIMIENTO (CIRCULAR No. 05 DEL 02/07/03 MODIFICADA AL 30/03/07) CONSIDERACIONES FINALES NUMERALES 3.8</b>
+	LA CERTIFICACION NO TIENEN FECHA DE VENCIMIENTO (CIRCULAR No. 05 DEL 02/07/03 MODIFICADA AL 30/03/07) CONSIDERACIONES FINALES NUMERALES 3.8
 	</div>
 </div>
 
