@@ -365,7 +365,7 @@ elemento.checked = chkbox.checked
 		</td>
 </td></tr></table>
 
-<?php if($totalRows_resumen==0){ ?>
+
 
 <table width="500"><tr>
 
@@ -460,20 +460,7 @@ NOMBRE Y APELLIDOS
 <br />
 </center>
 
-<?php // fin consulta
 
-} else {
-?>
-<center>
-<br />
-<br />
-<br />
-<img src="../../images/png/atencion.png" /><br /><br />
-<span class="texto_grande_gris" >YA SE CARGO EL RESUMEN PARA ESTA SECCION</span>
-</center>
-<br />
-<br />
-<?php } ?>
  </tr></table>
 <span class="texto_pequeno_gris">Sistema Intersoft para: <b><?php echo $row_colegio['webcol'];?></b></span>
 
@@ -492,13 +479,3 @@ NOMBRE Y APELLIDOS
 </center>
 </body>
 </html>
-<?php
-
-mysql_free_result($confip);
-mysql_free_result($mate1);
-mysql_free_result($aniosp);
-
-mysql_free_result($colegio);
-mysql_free_result($resumen);
-
-?>
