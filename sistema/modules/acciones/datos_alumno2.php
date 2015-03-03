@@ -129,13 +129,13 @@ do {
 
 $fecha_nac= $_POST['ano'.$i]."-".$_POST['mes'.$i]."-".$_POST['dia'.$i];
 
-     $updateSQL = sprintf("update jos_alumno_info SET nombre=%s, apellido=%s, lugar_nacimiento=%s, ef=%s, indicador_nacionalidad=%, cedula=%s, sexo=%s, fecha_nacimiento=%s, estado=%s WHERE alumno_id=%s",
+     $updateSQL = sprintf("update jos_alumno_info SET nombre=%s, apellido=%s, indicador_nacionalidad=%s, lugar_nacimiento=%s, ef=%s, cedula=%s, sexo=%s, fecha_nacimiento=%s, estado=%s WHERE alumno_id=%s",
                          
                             GetSQLValueString($_POST['nombre'.$i], "text"),
                             GetSQLValueString($_POST['apellido'.$i], "text"),
+                            GetSQLValueString($_POST['indicador_nacionalidad'.$i], "text"),
                             GetSQLValueString($_POST['lugar_nacimiento'.$i], "text"),
                             GetSQLValueString($_POST['ef'.$i], "text"),
-                            GetSQLValueString($_POST['indicador_nacionalidad'.$i], "text"),
                             GetSQLValueString($_POST['cedula'.$i], "biginit"),
                             GetSQLValueString($_POST['sexo'.$i], "text"),
                             GetSQLValueString($fecha_nac, "date"),
